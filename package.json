@@ -1,0 +1,19 @@
+{
+  "name": "doeparceiro",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Bugvoid/doeparceiro.git",
+  "author": "Lu,Tay,Evy,Gabriel,Caioba ",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
