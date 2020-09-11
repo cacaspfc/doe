@@ -9,8 +9,7 @@ module.exports = {
     if (!user) {
       user = await User.create({ email });
     }
-    // res.redirect("/");
+    // return  res.redirect("/");
     res.json(user);
-    // return res.send("<script>alert('Dados Gravado com Sucesso')</script>");
   },
 };

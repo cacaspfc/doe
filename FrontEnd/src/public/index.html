@@ -8,7 +8,7 @@
   </head>
   <body>
     <div id="after_submit"></div>
-    <form id="contact_form" action="/" method="POST">
+    <form id="contact_form" onsubmit="sendAnswer(event)">
       <div class="row">
         <label class="required" for="email">Your email:</label><br />
         <input
@@ -24,6 +24,7 @@
 
       <input id="submit_button" type="submit" value="Send email" />
     </form>
-    <script></script>
+    <script src="../../src/public/assets/js/index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </body>
 </html>
