@@ -7,7 +7,7 @@ routes.get("/", function (req, res) {
   res.sendFile(path.join(__dirname + "/public/index.html"));
 });
 
-routes.post("/", SessionController.store);
+routes.post("/login", SessionController.store);
 
 // routes.get("/dashboard", DashboardController.show);
 

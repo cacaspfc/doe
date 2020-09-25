@@ -1,10 +1,10 @@
-var baseUrl = "http://localhost:8000/";
+var baseUrl = "http://localhost:8000";
 
 function sendAnswer(event) {
   event.preventDefault();
   var email = document.getElementById("email").value;
-  console.log(email);
-  fetch(baseUrl, {
+  var senha = document.getElementById("password").value;
+  fetch(baseUrl + "/login", {
     method: "post",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ email }),
