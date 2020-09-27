@@ -1,19 +1,39 @@
 var baseUrl = "http://localhost:8000";
 
-function sendAnswer(event) {
+function login(event) {
   event.preventDefault();
   var email = document.getElementById("email").value;
-  var senha = document.getElementById("password").value;
+  var password = document.getElementById("password").value;
   fetch(baseUrl + "/login", {
     method: "post",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ email }),
+    body: JSON.stringify({ email, password }),
   }).then(function (response) {
     if (response != null) {
-      alert("Tudo certo");
+      window.location.href = "../../src/public/dashboard.html";
+    } else {
+      alert("Email ou senha errado");
+    }
+  });
+}
+
+function cadastrar(event) {
+  event.preventDefault();
+  var email = document.getElementById("email").value;
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+
+  fetch(baseUrl + "/cadastrar", {
+    method: "post",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email, username, password }),
+  }).then(function (response) {
+    if (response != null) {
+      alert("Cadastrado com sucesso");
+      window.location.href = "../../src/public/dashboard.html";
       return;
     } else {
-      alert("Resposta Errada!");
+      alert("Erro no cadastro!");
     }
   });
 }
