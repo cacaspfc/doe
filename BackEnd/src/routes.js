@@ -2,12 +2,15 @@ const express = require("express");
 const routes = express.Router();
 const path = require("path");
 const SessionController = require("./controller/SessionController");
+const RegistroDoacaoController = require("./controller/RegistroDoacaoController");
 
 routes.get("/", function (req, res) {});
 
 routes.post("/login", SessionController.login);
 
 routes.post("/cadastrar", SessionController.cadastrar);
+
+routes.post("/registrodoacao", RegistroDoacaoController.store);
 
 routes.get("/home", function (request, response) {
   if (request.session.loggedin) {

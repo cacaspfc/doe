@@ -8,6 +8,7 @@ const UserSchema = new mongoose.Schema({
   dataNascimento: Date,
   peso: String,
   tipoSangue: String,
+  telefone: String,
 });
 
 module.exports = mongoose.model("User", UserSchema);
