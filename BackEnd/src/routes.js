@@ -3,9 +3,7 @@ const routes = express.Router();
 const path = require("path");
 const SessionController = require("./controller/SessionController");
 
-routes.get("/", function (req, res) {
-  res.sendFile(path.join(__dirname + "/public/index.html"));
-});
+routes.get("/", function (req, res) {});
 
 routes.post("/login", SessionController.login);
 
