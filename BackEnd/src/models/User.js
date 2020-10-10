@@ -5,10 +5,13 @@ const UserSchema = new mongoose.Schema({
   password: String,
   username: String,
   endereco: String,
-  dataNascimento: Date,
+  dataNascimento: String,
   peso: String,
+  altura: String,
   tipoSangue: String,
   telefone: String,
+  estado: String,
+  doencasSangue: [String],
 });
 
 module.exports = mongoose.model("User", UserSchema);

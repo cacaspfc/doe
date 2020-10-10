@@ -10,6 +10,8 @@ routes.post("/login", SessionController.login);
 
 routes.post("/cadastrar", SessionController.cadastrar);
 
+routes.put("/atualizar", SessionController.atualizar);
+
 routes.post("/registrodoacao", RegistroDoacaoController.store);
 
 routes.get("/home", function (request, response) {
@@ -20,7 +22,5 @@ routes.get("/home", function (request, response) {
   }
   response.end();
 });
-
-// routes.get("/dashboard", DashboardController.show);
 
 module.exports = routes;

@@ -3,7 +3,7 @@ const RegistroDoacao = require("../models/RegistroDoacao");
 
 module.exports = {
   async store(req, res) {
-    const { dataDoacao, localDoacao } = req.body;
+    const { dataDoacao } = req.body;
     const { localDoacao } = req.body;
     const { user_id } = req.headers;
 
