@@ -28,7 +28,6 @@ function cadastrar(event) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ email, username, password }),
   }).then(function (response) {
-    console.log(response);
     if (response.status != 400) {
       alert("Cadastrado com sucesso");
       // window.location.href = "../../src/public/dashboard.html";

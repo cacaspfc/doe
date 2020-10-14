@@ -23,7 +23,6 @@ module.exports = {
 
   async atualizar(req, res) {
     const { _id } = req.body; // passar como parametro ou localstore
-
     User.findById(_id, function (err, user) {
       if (err) {
         res.status(400).send(null);
@@ -36,6 +35,7 @@ module.exports = {
       const { peso } = req.body;
       const { altura } = req.body;
       const { tipoSangue } = req.body;
+      const { genero } = req.body;
       const { telefone } = req.body;
       const { estado } = req.body;
       var { doencasSangue } = req.body;
@@ -47,6 +47,7 @@ module.exports = {
       user.peso = peso;
       user.altura = altura;
       user.tipoSangue = tipoSangue;
+      user.genero = genero;
       user.telefone = telefone;
       user.estado = estado;
       user.doencasSangue = doencasSangue.split(",");
@@ -55,7 +56,6 @@ module.exports = {
       res.status(200).send(user);
       console.log("usuario atualizou os dados" + user);
     });
-
     // return  res.redirect("/");
   },
 

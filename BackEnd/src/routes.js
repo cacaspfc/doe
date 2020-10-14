@@ -12,7 +12,7 @@ routes.post("/cadastrar", SessionController.cadastrar);
 
 routes.put("/atualizar", SessionController.atualizar);
 
-routes.post("/registrodoacao", RegistroDoacaoController.store);
+routes.post("/registrodoacao/:user_id", RegistroDoacaoController.store);
 
 routes.get("/home", function (request, response) {
   if (request.session.loggedin) {

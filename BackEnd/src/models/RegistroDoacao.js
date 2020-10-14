@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const RegistroDoacaoSchema = new mongoose.Schema({
-  dataDoacao: String,
+  dataDoacao: Date,
   LocalDoacao: String,
   user: {
     type: mongoose.Schema.Types.ObjectId,
@@ -9,4 +9,4 @@ const RegistroDoacaoSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("BloodDonation", RegistroDoacaoSchema);
+module.exports = mongoose.model("BloodDonationUser", RegistroDoacaoSchema);
