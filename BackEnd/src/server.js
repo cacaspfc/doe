@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(routes);
 
 mongoose.connect(
-  "mongodb+srv://root:root@cluster0-huzkm.mongodb.net/doeparceiro?retryWrites=true",
+  "mongodb+srv://root:root@cluster0.7npcu.mongodb.net/doeparceiro?retryWrites=true&w=majority",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
