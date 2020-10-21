@@ -40,7 +40,6 @@ module.exports = {
       const { estado } = req.body;
       var { doencasSangue } = req.body;
 
-      console.log(email)
       user.email = email;
       user.username = username;
       user.endereco = endereco;

@@ -3,7 +3,11 @@ const mongoose = require("mongoose");
 const RegistroDoacaoSchema = new mongoose.Schema({
   dataDoacao: Date,
   proximaDataDoacao: Date,
-  LocalDoacao: String,
+  localDoacao: String,
+  noTropy: {
+    type: Boolean,
+    default: false
+  },
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
