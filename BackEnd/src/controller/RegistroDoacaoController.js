@@ -25,7 +25,11 @@ module.exports = {
         var donationRemember = lastRegister[lastRegister.length - 1].dataDoacao;
         dataDoacao = new Date(moment(dataDoacao))
         if (dataDoacao < donationRemember && dataDoacao < new Date(moment(donationRemember).subtract(3,"month"))) {
-         await registerGenero(dataDoacao,localDoacao,user,true)
+         if (dataDoacao < user.dateRegister) {
+           await registerGenero(dataDoacao,localDoacao,user,false)
+         }else {
+            await registerGenero(dataDoacao,localDoacao,user,true)
+         }
          return res.status(200).json("Resgistrado");
         }else{
           return res.status(200).json("Desculpe, voce não pode registrar essa doacao pq existe um registro que bate com 3 meses  " + moment(donationRemember).format("YYYY-MM-DD"));

@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const moment = require('moment')
 
 const UserSchema = new mongoose.Schema({
   email: String,
@@ -13,6 +14,10 @@ const UserSchema = new mongoose.Schema({
   telefone: String,
   estado: String,
   doencasSangue: [String],
+  dateRegister:{
+    type: Date,
+    default : new Date(moment())
+  }
 });
 
 module.exports = mongoose.model("User", UserSchema);
