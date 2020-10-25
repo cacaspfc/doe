@@ -1,65 +1,83 @@
 var menuInicio = document.getElementById("menuInicio");  
 var menuCadastro = document.getElementById("menuCadastro");  
 var menuTrofeu = document.getElementById("menuTrofeu");  
-var menuRegistro = document.getElementById("menuRegistro");  
+var menuDoacoes = document.getElementById("menuDoacoes");  
 var menuLocais = document.getElementById("menuLocais");  
+var menuRegistros = document.getElementById("menuRegistros");  
 
 
 var sectionInicio = document.getElementById("inicio");
 var sectionCadastro = document.getElementById("cadastro");  
-var sectionRegistro = document.getElementById("registro");
 var sectionTrofeu = document.getElementById("trofeu");
+var sectionDoacoes = document.getElementById("doacoes");
 var sectionLocais = document.getElementById("locais");
+var sectionRegistros = document.getElementById("registros");
 
 sectionInicio.style.display = "block";  
 sectionCadastro.style.display = "none";  
-sectionRegistro.style.display = "none";  
 sectionTrofeu.style.display = "none";  
+sectionDoacoes.style.display = "none";  
 sectionLocais.style.display = "none";
+sectionRegistros.style.display = "none";
 
 menuInicio.addEventListener("click", function(){  
     sectionInicio.style.display = "block";
     sectionCadastro.style.display = "none";  
-    sectionRegistro.style.display = "none";  
+    sectionDoacoes.style.display = "none";  
     sectionTrofeu.style.display = "none";  
     sectionLocais.style.display = "none";
+    sectionRegistros.style.display = "none";
     
 } ,false);  
 
 
 menuCadastro.addEventListener("click", function(){  
-    sectionCadastro.style.display = "block";
     sectionInicio.style.display = "none";
-    sectionRegistro.style.display = "none";  
+    sectionCadastro.style.display = "block";
+    sectionDoacoes.style.display = "none";  
     sectionTrofeu.style.display = "none";  
     sectionLocais.style.display = "none";
+    sectionRegistros.style.display = "none";
     
 }    ,false);  
 
 menuTrofeu.addEventListener("click", function(){  
     sectionCadastro.style.display = "none";
     sectionInicio.style.display = "none";
-    sectionRegistro.style.display = "none";  
     sectionTrofeu.style.display = "block";  
+    sectionDoacoes.style.display = "none";  
     sectionLocais.style.display = "none";
+    sectionRegistros.style.display = "none";
     
 }    ,false);  
 
-menuRegistro.addEventListener("click", function(){  
-    sectionCadastro.style.display = "none";
+menuDoacoes.addEventListener("click", function(){  
     sectionInicio.style.display = "none";
-    sectionRegistro.style.display = "block";  
+    sectionCadastro.style.display = "none";
     sectionTrofeu.style.display = "none";  
+    sectionDoacoes.style.display = "block";
     sectionLocais.style.display = "none";
+    sectionRegistros.style.display = "none";
     
 }    ,false);  
 
 menuLocais.addEventListener("click", function(){  
     sectionCadastro.style.display = "none";
     sectionInicio.style.display = "none";
-    sectionRegistro.style.display = "none";  
+    sectionDoacoes.style.display = "none";  
     sectionTrofeu.style.display = "none";  
     sectionLocais.style.display = "block";
+    sectionRegistros.style.display = "none";
+    
+}    ,false);  
+
+menuRegistros.addEventListener("click", function(){  
+    sectionCadastro.style.display = "none";
+    sectionInicio.style.display = "none";
+    sectionDoacoes.style.display = "none";  
+    sectionTrofeu.style.display = "none";  
+    sectionLocais.style.display = "none";
+    sectionRegistros.style.display = "block";
     
 }    ,false);  
 
