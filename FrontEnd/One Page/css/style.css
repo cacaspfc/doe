@@ -1,0 +1,384 @@
+html,body{
+    font-family: 'Agency FB';
+    line-height: 1.8;
+    color: black;
+    width: 100%; height: 100%;
+}
+p {font-size: 18px; font-family: 'Agency FB';}
+.container-fluid{
+    padding: 90px 40px;
+    padding-top: 70px;
+}
+.first-container{
+    background-color: rgb(252, 240, 207);
+    color: darkred;
+    padding: 150px 90px;
+}
+/* ======================================================
+Menu */
+.navbar {
+  margin-bottom: 0;
+  background-color:  rgb(252, 240, 207);
+  z-index: 9999;
+  border: 0;
+  font-size: 12px !important;
+  line-height: 1.42857143 !important;
+  letter-spacing: 4px;
+  border-radius: 0;
+  font-family: Montserrat, sans-serif;
+}
+.navbar li a, .navbar .navbar-brand {
+  color: darkred !important;
+}
+.navbar-nav li a:hover, .navbar-nav li.active a {
+  color: darkred !important;
+  background-color: #fff !important;
+}
+.navbar-default .navbar-toggle {
+  border-color: transparent;
+  color: darkred !important;
+}
+/* ====================================================== 
+Botão animado*/
+div[class*=box] {
+	  height: 33.33%;
+	  width: 100%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box-1 { }
+.btn{
+    line-height: 50px;
+	  height: 50px;
+	  text-align: center;
+	  width: 250px;
+    cursor: pointer;
+    font-size: 25px;
+    left: 8.5%;
+}
+.btn-one {
+	color: darkred;
+	transition: all 0.3s;
+	position: relative;
+}
+.btn-one span {
+	transition: all 0.3s;
+}
+.btn-one::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	opacity: 0;
+	transition: all 0.3s;
+	border-top-width: 2px;
+	border-bottom-width: 2px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: darkred;
+	border-bottom-color: darkred;
+	transform: scale(0.1, 1);
+}
+.btn-one:hover span {
+	letter-spacing: 2px;
+}
+.btn-one:hover::before {
+	opacity: 1;	
+	transform: scale(1, 1);	
+}
+.btn-one::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	transition: all 0.3s;
+	background-color:;
+}
+.btn-one:hover::after {
+	opacity: 0;	
+	transform: scale(0.1, 1);
+}
+/* ======================================================
+Imagens */
+#logo{
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+}
+@media(max-height: 500px){
+    #logo {
+        padding: 60%;
+    }
+}
+/* ====================================================== */
+.bg2{
+    background-color: white;
+}
+.bg3{
+    background-color: rgb(64, 94, 190);
+    color: white;
+}
+.bg4{
+    background-color: lightslategray;
+}
+.bg5{
+  background-image: url("..img/back.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 15rem 0;
+}
+.bg6{
+  background-color: darkred;
+}
+/* ===================================================  */
+#doe{
+    position: relative;
+    margin-top: 80px;
+    font-weight: 700;
+    font-family: 'Agency FB';
+    font-size: 180px;
+    line-height: 80px;
+    left: 13%;
+}
+#slogo{
+  position: relative;
+  margin-top: 30px;
+  font-weight: 700;
+  font-family: 'Agency FB';
+  font-size: 50px;
+  line-height: 80px;
+  left: 13%;
+}
+/* ===================================================
+Cards */
+.content-section {
+    padding-top: 7.5rem;
+    padding-bottom: 7.5rem;
+  }
+  .content-section-heading h2 {
+    font-size: 3rem;
+  }
+  .content-section-heading h3 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
+  .text-secondary {
+    color: darkred !important;
+  }
+.portfolio-item {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    max-width: 530px;
+    margin: auto auto 1rem;
+  }
+  
+  .portfolio-item .caption {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(33, 37, 41, 0.2);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+  
+  .portfolio-item .caption .caption-content {
+    color: #fff;
+    margin: auto 2rem 2rem;
+  }
+  
+  .portfolio-item .caption .caption-content h2 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+  }
+  
+  .portfolio-item .caption .caption-content p {
+    font-weight: 300;
+    font-size: 1.2rem;
+  }
+  
+  @media (min-width: 992px) {
+    .portfolio-item {
+      max-width: none;
+      margin: 0;
+    }
+    .portfolio-item .caption {
+      transition: background-color 0.7s, -webkit-clip-path 0.25s ease-out;
+      transition: clip-path 0.25s ease-out, background-color 0.7s;
+      transition: clip-path 0.25s ease-out, background-color 0.7s, -webkit-clip-path 0.25s ease-out;
+      -webkit-clip-path: inset(0px);
+      clip-path: inset(0px);
+    }
+    .portfolio-item .caption .caption-content {
+      transition: opacity 0.25s;
+      margin-left: 5rem;
+      margin-right: 5rem;
+      margin-bottom: 5rem;
+    }
+    .portfolio-item img {
+      transition: -webkit-clip-path 0.25s ease-out;
+      transition: clip-path 0.25s ease-out;
+      transition: clip-path 0.25s ease-out, -webkit-clip-path 0.25s ease-out;
+      -webkit-clip-path: inset(-1px);
+      clip-path: inset(-1px);
+    }
+    .portfolio-item:hover img {
+      -webkit-clip-path: inset(2rem);
+      clip-path: inset(2rem);
+    }
+    .portfolio-item:hover .caption {
+      background-color: rgba(44, 152, 185, 0.9);
+      -webkit-clip-path: inset(2rem);
+      clip-path: inset(2rem);
+    }
+  }
+/* ===================================================
+Botões */
+.btn{
+    margin-top: 1px; 
+    margin-left: 15px; margin-right: 15px;
+}
+/* ===================================================
+Imagens */
+#circulo {
+    width: 310px;
+    height: 310px;
+    border-width: 6px;
+    border-color: darkred;
+    border-style: solid;
+    border-radius: 200px 200px 200px 200px;
+    display: inline-block
+}
+#centro{
+ position: absolute;
+ top: 51%; left: 51%;
+ margin-top: -51%; margin-left: -51%;
+}
+#img1{
+    position: relative;
+    top: 20%;
+    left: 18%;
+    margin-top: 10px;
+    line-height: 8px;
+}
+.pulse{
+  animation: pulse 0.7s infinite;
+  margin: 0 auto;
+  display: table;
+  margin-top: 15px;
+  animation-direction: alternate;
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+}
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+    -webkit-filter: brightness(100%);
+  }
+  100% {
+    -webkit-transform: scale(1.1);
+    -webkit-filter: brightness(100%);
+  }
+}
+
+#img2{
+    position: center;
+    width: 100%;
+    padding: 30px;
+}
+/* ===================================================
+Animaçã em letras */
+/* .content {
+    position: absolute;
+    top: 80%; left: 60%;
+    transform: translate(-50%, -50%);
+    font-size: 35px;
+    line-height: 40px;
+    font-family: 'Agency FB';
+    color: black;
+    height: 160px;
+    overflow: hidden;
+  }
+  
+  .visible {
+    font-weight: 600;
+    overflow: hidden;
+    height: 40px;
+    padding: 0 40px;
+  }
+  .visible:before {
+    content: '[';
+    left: 0;
+    line-height: 40px;
+  }
+  .visible:after {
+    content: ']';
+    position: absolute;
+    right: 0;
+    line-height: 40px;
+  }
+  .visible:after, .visible:before {
+    position: absolute;
+    top: 0;
+    color: darkred;
+    font-size: 42px;
+    animation: 2s linear 0s normal none infinite opacity;
+  }
+  
+  p {
+    display: inline;
+    float: left;
+    margin: 0;
+  }
+  
+  ul {
+    margin-top: 0;
+    padding-left: 110px;
+    text-align: left;
+    list-style: none;
+    animation: 6s linear 0s normal none infinite change;
+  }
+  
+  ul li {
+    line-height: 40px;
+    margin: 0;
+  }
+  
+  @keyframes opacity {
+    0%, 100% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  @keyframes change {
+    0%, 12%, 100% {
+      transform: translateY(0);
+    }
+    17%,29% {
+      transform: translateY(-25%);
+    }
+    34%,46% {
+      transform: translateY(-50%);
+    }
+    51%,63% {
+      transform: translateY(-75%);
+    }
+    68%,80% {
+      transform: translateY(-50%);
+    }
+    85%,97% {
+      transform: translateY(-25%);
+    }
+  } */
+  /* =================================================== */
