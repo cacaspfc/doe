@@ -16,7 +16,7 @@ const UserSchema = new mongoose.Schema({
   doencasSangue: [String],
   dateRegister:{
     type: Date,
-    default : new Date(moment())
+    default : new Date(moment().subtract(3,"hour"))
   }
 });
 

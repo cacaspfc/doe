@@ -15,12 +15,12 @@ routes.put("/atualizar", SessionController.atualizar);
 routes.post("/registrodoacao/:user_id", RegistroDoacaoController.store);
 
 routes.get("/home", function (request, response) {
-  if (request.session.loggedin) {
-    response.send("Welcome back, " + request.session.username + "!");
-  } else {
-    response.send("Please login to view this page!");
-  }
-  response.end();
+  // if (request.session.loggedin) {
+  //   response.send("Welcome back, " + request.session.username + "!");
+  // } else {
+  //   response.send("Please login to view this page!");
+  // }
+  // response.end();
 });
 
 module.exports = routes;
