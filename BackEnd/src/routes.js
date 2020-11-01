@@ -1,20 +1,25 @@
-const express = require("express");
+const express = require('express');
 const routes = express.Router();
-const path = require("path");
-const SessionController = require("./controller/SessionController");
-const RegistroDoacaoController = require("./controller/RegistroDoacaoController");
+const path = require('path');
+const SessionController = require('./controller/SessionController');
+const RegistroDoacaoController = require('./controller/RegistroDoacaoController');
+const TrofeusController = require('./controller/TrofeusController');
 
-routes.get("/", function (req, res) {});
+routes.get('/', function (req, res) {});
 
-routes.post("/login", SessionController.login);
+routes.post('/login', SessionController.login);
 
-routes.post("/cadastrar", SessionController.cadastrar);
+routes.post('/cadastrar', SessionController.cadastrar);
 
-routes.put("/atualizar", SessionController.atualizar);
+routes.put('/atualizar/:user_id', SessionController.atualizar);
 
-routes.post("/registrodoacao/:user_id", RegistroDoacaoController.store);
+routes.post('/registrodoacao/:user_id', RegistroDoacaoController.store);
 
-routes.get("/home", function (request, response) {
+routes.get('/userdoacao/:user_id', RegistroDoacaoController.show);
+
+routes.get('/usertrophy/:user_id', TrofeusController.show);
+
+routes.get('/home', function (request, response) {
   // if (request.session.loggedin) {
   //   response.send("Welcome back, " + request.session.username + "!");
   // } else {

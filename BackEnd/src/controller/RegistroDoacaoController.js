@@ -3,6 +3,7 @@ const RegistroDoacao = require('../models/RegistroDoacao');
 const moment = require('moment');
 const momentTz = require('moment-timezone');
 const tropy = require('../controller/TrofeusController');
+const { show } = require('../controller/TrofeusController');
 
 module.exports = {
   async store(req, res) {
@@ -71,6 +72,18 @@ module.exports = {
     }
   },
 
+  async show(req, res) {
+    const { user_id } = req.params;
+
+    var register = await RegistroDoacao.find({ user: user_id }).sort({
+      dataDoacao: -1,
+    });
+    if (register) {
+      res.status(200).json(register);
+    } else {
+      res.status(400).json(null);
+    }
+  },
   async alter(req, res) {},
   async deleted(req, res) {},
 };
