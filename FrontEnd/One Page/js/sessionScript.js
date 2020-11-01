@@ -24,7 +24,7 @@ function cadastrar(event) {
   event.preventDefault();
   var email = document.getElementById('email').value;
   var username = document.getElementById('username').value;
-  var password = document.getElementById('password').value;
+  var password = document.getElementById('senha').value;
 
   fetch(baseUrl + '/cadastrar', {
     method: 'post',
@@ -32,10 +32,14 @@ function cadastrar(event) {
     body: JSON.stringify({ email, username, password }),
   }).then(function (response) {
     console.log(response);
-    if (response.status != 400) {
-      alert('Cadastrado com sucesso');
-      // window.location.href = "../../src/public/dashboard.html";
-      return;
+    if (response.status == 200) {
+      response.json().then((data) => {
+        console.log(data._id);
+        localStorage.setItem('User', data._id);
+        window.location.href = '../../Dashboard/index.html';
+      });
+    } else if (response.status == 409) {
+      alert('Email já está em uso por outro usuario');
     } else {
       alert('Erro no cadastro!');
     }

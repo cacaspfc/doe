@@ -11,10 +11,11 @@ module.exports = {
     if (user == null) {
       user = await User.create({ email, password, username });
       res.json(user);
+    } else if (user) {
+      res.status(409).json(null);
     } else {
       res.status(400).json(null);
     }
-    // return  res.redirect("/");
   },
 
   async atualizar(req, res) {
