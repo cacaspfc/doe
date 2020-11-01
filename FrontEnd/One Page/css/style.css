@@ -56,6 +56,10 @@ div[class*=box] {
     cursor: pointer;
     font-size: 25px;
     left: 8.5%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .btn-one {
 	color: darkred;
@@ -105,6 +109,45 @@ div[class*=box] {
 	opacity: 0;	
 	transform: scale(0.1, 1);
 }
+/* Botão 2 */
+.btn-two {
+	color: #FFF;
+	transition: all 0.5s;
+  position: relative;
+  left: 0;
+}
+.btn-two::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background-color: rgba(255,255,255,0.1);
+	transition: all 0.3s;
+}
+.btn-two:hover::before {
+	opacity: 0 ;
+	transform: scale(0.5,0.5);
+}
+.btn-two::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	opacity: 0;
+	transition: all 0.3s;
+	border: 1px solid rgba(255,255,255,0.5);
+	transform: scale(1.2,1.2);
+}
+.btn-two:hover::after {
+	opacity: 1;
+	transform: scale(1,1);
+}
 /* ======================================================
 Imagens */
 #logo{
@@ -117,25 +160,29 @@ Imagens */
         padding: 60%;
     }
 }
+/* =======================================================
+Container Imagem */
+.callout{
+  background-image: url('../img/maos.png');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-color: dimgrey; */
+  padding: 16rem 0;
+}
 /* ====================================================== */
 .bg2{
     background-color: white;
 }
 .bg3{
-    background-color: rgb(64, 94, 190);
+    background-color:rgb(252, 240, 207);
     color: white;
 }
 .bg4{
     background-color: lightslategray;
 }
-.bg5{
-  background-image: url("..img/back.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  padding: 15rem 0;
-}
 .bg6{
-  background-color: darkred;
+  background-color: #1D809F;
 }
 /* ===================================================  */
 #doe{
@@ -243,10 +290,10 @@ Cards */
   }
 /* ===================================================
 Botões */
-.btn{
+/* .btn{
     margin-top: 1px; 
     margin-left: 15px; margin-right: 15px;
-}
+} */
 /* ===================================================
 Imagens */
 #circulo {
@@ -296,89 +343,42 @@ Imagens */
     padding: 30px;
 }
 /* ===================================================
-Animaçã em letras */
-/* .content {
-    position: absolute;
-    top: 80%; left: 60%;
-    transform: translate(-50%, -50%);
-    font-size: 35px;
-    line-height: 40px;
-    font-family: 'Agency FB';
-    color: black;
-    height: 160px;
-    overflow: hidden;
-  }
-  
-  .visible {
-    font-weight: 600;
-    overflow: hidden;
-    height: 40px;
-    padding: 0 40px;
-  }
-  .visible:before {
-    content: '[';
-    left: 0;
-    line-height: 40px;
-  }
-  .visible:after {
-    content: ']';
-    position: absolute;
-    right: 0;
-    line-height: 40px;
-  }
-  .visible:after, .visible:before {
-    position: absolute;
-    top: 0;
-    color: darkred;
-    font-size: 42px;
-    animation: 2s linear 0s normal none infinite opacity;
-  }
-  
-  p {
-    display: inline;
-    float: left;
-    margin: 0;
-  }
-  
-  ul {
-    margin-top: 0;
-    padding-left: 110px;
-    text-align: left;
-    list-style: none;
-    animation: 6s linear 0s normal none infinite change;
-  }
-  
-  ul li {
-    line-height: 40px;
-    margin: 0;
-  }
-  
-  @keyframes opacity {
-    0%, 100% {
-      opacity: 0;
-    }
-    50% {
-      opacity: 1;
-    }
-  }
-  @keyframes change {
-    0%, 12%, 100% {
-      transform: translateY(0);
-    }
-    17%,29% {
-      transform: translateY(-25%);
-    }
-    34%,46% {
-      transform: translateY(-50%);
-    }
-    51%,63% {
-      transform: translateY(-75%);
-    }
-    68%,80% {
-      transform: translateY(-50%);
-    }
-    85%,97% {
-      transform: translateY(-25%);
-    }
-  } */
+/* ===================================================
+Modal */
+.modal-header, h4, .close {
+  background-color: darkred;
+  color:white !important;
+  text-align: center;
+  font-size: 30px;
+}
+.modal-body .p{
+  text-align: center;
+  font-size: 13px;
+}
+.modal-footer {
+  background-color: #f9f9f9;
+} .btn5{
+  position: relative; display: block;
+  left: 25%;
+  padding: 14px 40px;
+  height: 10px; width: 250px;
+  border-radius: 3px;
+  border: 0 solid black;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: 'Montserrat';
+  overflow: hidden;
+  background-color: green;
+
+  /* flex para alinhar conteúdo*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} .btn5:hover{
+  background-color: darkred;
+  color: white;
+}
+
   /* =================================================== */

@@ -1,20 +1,19 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap');
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 body {
     font-family: 'Open Sans', sans-serif;
+}
+.container-fluid{
+    padding: 60px 30px;
+    padding-top: 70px;
 }
 .container {
     justify-content: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 300%; width: 300%;
     background-color: #ecf0f1;
     overflow: auto;
+    padding: 140px 0px;
 }
 .content {
     background-color: #fff;
@@ -45,6 +44,9 @@ body {
 }
 .title-second {
     color: darkred;
+    font-size: 20px;
+    position: relative;
+    top: 20px;
 }
 .description {
     font-size: 14px;
@@ -56,6 +58,8 @@ body {
 }
 .description-second {
     color: #7f8c8d;
+    position: relative;
+    top: 14px;
 }
 .btn {
     border-radius: 15px;
@@ -69,6 +73,8 @@ body {
     align-self: center;
     border: none;
     margin-top: 1rem;
+    position: relative;
+    top: -12px;
 }
 .btn-primary {
     background-color: transparent;
@@ -96,6 +102,7 @@ body {
     z-index: 11;
 }
 .first-column {
+    padding: 80px 40px;
     text-align: center;
     width: 40%;
     z-index: 10;
@@ -111,9 +118,11 @@ body {
     display: flex;
     flex-direction: column;
     width: 55%;
+    position: relative;
+    top: -4px
 }
 .form input {
-    height: 45px;
+    height: 40px;
     width: 100%;
     border: none;
     background-color: #ecf0f1;
@@ -157,223 +166,7 @@ input:-webkit-autofill
 .password::first-letter {
     text-transform: capitalize;
 }
-
-
-
-.sign-in-js .first-content .first-column {
-    z-index: -1;
+p{
+    font-size: 11px;
+    color:  #58af9b;
 }
-
-.sign-in-js .second-content .second-column {
-    z-index: 11;
-}
-.sign-in-js .second-content .first-column {
-    z-index: 13;
-}
-
-.sign-in-js .content::before {
-    left: 60%;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    animation: slidein 1.5s; /*MODIFIQUEI DE 3s PARA 1.3s*/
-
-    z-index: 12;
-}
-
-.sign-up-js .content::before {
-    animation: slideout 1.5s; /*MODIFIQUEI DE 3s PARA 1.3s*/
-
-    z-index: 12;
-}
-
-.sign-up-js .second-content .first-column,
-.sign-up-js .second-content .second-column {
-    z-index: -1;
-}
-
-.sign-up-js .first-content .second-column {
-    z-index: 11;
-}
-
-.sign-up-js .first-content .first-column {
-    z-index: 13;    
-}
-
-
-/* DESLOCAMENTO CONTEÚDO ATRÁS DO CONTENT:BEFORE*/
-.sign-in-js .first-content .second-column {
-
-    z-index: -1;
-    position: relative;
-    animation: deslocamentoEsq 1.3s; /*MODIFIQUEI DE 3s PARA 1.3s*/
-}
-
-.sign-up-js .second-content .second-column {
-    position: relative;
-    z-index: -1;
-    animation: deslocamentoDir 1.3s; /*MODIFIQUEI DE 3s PARA 1.3s*/
-}
-
-/*ANIMAÇÃOO CSS PARA O CONTEÚDO*/
-
-@keyframes deslocamentoEsq {
-
-    from {
-        left: 0;
-        opacity: 1;
-        z-index: 12;
-    }
-
-    25% {
-        left: -80px;
-        opacity: .5;
-        /* z-index: 12; NÃO HÁ NECESSIDADE */
-    }
-
-    50% {
-        left: -100px;
-        opacity: .2;
-        /* z-index: 12; NÃO HÁ NECESSIDADE */
-    }
-
-    to {
-        left: -110px;
-        opacity: 0;
-        z-index: -1;
-    }
-}
-
-
-@keyframes deslocamentoDir {
-
-    from {
-        left: 0;
-        z-index: 12;
-    }
-
-    25% {
-        left: 80px;
-        /* z-index: 12;  NÃO HÁ NECESSIDADE*/
-    }
-
-    50% {
-        left: 100px;
-        /* z-index: 12; NÃO HÁ NECESSIDADE*/
-        /* background-color: yellow;  Exemplo que dei no vídeo*/
-    }
-
-    to {
-        left: 110px;
-        z-index: -1;
-    }
-}
-
-
-/*ANIMAÇÃO CSS*/
-
-@keyframes slidein {
-
-    from {
-        left: 0;
-        width: 40%;
-    }
-
-    25% {
-        left: 5%;
-        width: 50%;
-    }
-
-    50% {
-        left: 25%;
-        width: 60%;
-    }
-
-    75% {
-        left: 45%;
-        width: 50%;
-    }
-
-    to {
-        left: 60%;
-        width: 40%;
-    }
-}
-
-@keyframes slideout {
-
-    from {
-        left: 60%;
-        width: 40%;
-    }
-
-    25% {
-        left: 45%;
-        width: 50%;
-    }
-
-    50% {
-        left: 25%;
-        width: 60%;
-    }
-
-    75% {
-        left: 5%;
-        width: 50%;
-    }
-
-    to {
-        left: 0;
-        width: 40%;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

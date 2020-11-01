@@ -16,9 +16,11 @@ startList = function() {
      }
     }
     window.onload=startList;
-
-$(document).redy(function(){
-    $("#login").click(function(){
-        $("#modal").modal();
+/*Modal*/ 
+$(function(){
+    $(document).ready(function(){
+        $("#myBtn").click(function(){
+            $("#myModal").modal();
+        });
     });
 });

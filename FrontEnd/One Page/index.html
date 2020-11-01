@@ -37,11 +37,11 @@
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#about">ABOUT</a></li>
-          <li><a href="#services">SERVICES</a></li>
-          <li><a href="#portfolio">PORTFOLIO</a></li>
-          <li><a href="#pricing">PRICING</a></li>
-          <li><a href="#contact">CONTACT</a></li>
+          <li><a href="#sobre">SOBRE</a></li>
+          <li><a href="#projetos">PROJETOS</a></li>
+          <li><a href="#informa">INFORMÇÕES</a></li>
+          <li><a href="#entre">ENTRE</a></li>
+          <li><a href="#contato">CONTATO</a></li>
         </ul>
       </div>
     </div>
@@ -145,23 +145,70 @@
           </div>
         </div>
       </section>
+      <!-- ========================================================================================================= -->
       <!-- Infografico -->
     <div class="container-fluid bg3 text-center">
         <div class="container">
+          <h3 href="#">  </h3>
             <img class="img-responsive" src="img/info.png" alt="Infografico" style="display: inline;">
         </div>
     </div>
+    <!-- ============================================================================================================ -->
     <!-- Cadastro Chamativo -->
-    <div class="containe-fluid bg5 text-center">
-      <div class="container">
-        <h2 class="">Bem-Vindo a <em>sua</em> Área DOE </h2>
-          <button class="btn btn-primary" id="login"> Entre </button>
-      </div>
+    <div class="callout">
+      <div class="container-fluid text-center">
+        <h2 class="">Bem-Vindo <em>a</em>  Área DOE </h2>
+          <div class="box-2">
+            <div class="btn btn-two" id="myBtn">
+              <span>ENTRE</span>
+            </div>
+          </div>
     </div>
+  </div>
+
     <!-- ========================================================================================================== -->
     <!-- Modal -->
 
-    
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+
+        <div class="modal-content">
+          <div class="modal-header" style="padding: 35px 50px;">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4><span class="glyphicon glyphicon-lock"></span> Login </h4>
+          </div>
+          <div class="modal-body" style="padding: 40px 50px;">
+            <form role="form">
+              <div class="form-group">
+                <label for="username"><span class="glyphicon glyphicon-user"> E-mail </span></label>
+                <input type="text" class="form-control" id="username" placeholder="E-mail ou Usuário">
+              </div>
+              <div class="form-group">
+                <label for="senha"><span class="glyphicon glyphicon-eye-open"></span> Senha </label>
+                <input type="text" class="form-control" id="senha" placeholder="Senha">
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" value="" checked> Lembre Sua Senha ? </label>
+              </div>
+              <div class="modal-body">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-sm-5 sm-auto p">
+                    <p>Forgot <a href="#">Password?</a></p>
+                  </div>
+                </div>
+                </div>
+              </div>
+              <button type="submit" class="btn5 btn-success btn-block" > Login </button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <!-- <button type="submit" class="btn6 btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Sair </button> -->
+            <p>Ainda não faz parte ? <a href="#">Cadastre</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- ================================================================================================================ -->
     <!-- Fale Conosco -->
