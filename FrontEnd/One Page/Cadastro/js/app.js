@@ -8,7 +8,7 @@ btnSignup.addEventListener("click", function () {
 })
 
 // Verificação de senhar 
-/* ----------------------------------------------------*/
+/* ----------------------------------------------------------------------------------------------------------------------*/
 
 function verificar(){
     senha = document.getElementById('senha').value;
@@ -32,17 +32,17 @@ function verificar(){
 	if(senha.match(/W+/)){
 		fraca += 25;
 	}
-	return mostra_res();
+	return mostrar_res();
 }
 
-function mostra_res(){
+function mostrar_res(){
     if(fraca < 30){
-		mostra.innerHTML = '<tr><td bgcolor="red" width="'+fraca+'"></td><td>Fraca </td></tr>';
+		mostrar.innerHTML = '<tr><td bgcolor="red" width="'+fraca+'"></td><td>Fraca </td></tr>';
 	}else if((fraca >= 30) && (fraca < 60)){
-		mostra.innerHTML = '<tr><td bgcolor="yellow" width="'+fraca+'"></td><td>Justa </td></tr>';;
+		mostrar.innerHTML = '<tr><td bgcolor="yellow" width="'+fraca+'"></td><td>Justa </td></tr>';;
 	}else if((fraca >= 60) && (fraca < 85)){
-		mostra.innerHTML = '<tr><td bgcolor="blue" width="'+fraca+'"></td><td>Forte </td></tr>';
+		mostrar.innerHTML = '<tr><td bgcolor="blue" width="'+fraca+'"></td><td>Forte </td></tr>';
 	}else{
-		mostra.innerHTML = '<tr><td bgcolor="green" width="'+fraca+'"></td><td>Excelente </td></tr>';
+		mostrar.innerHTML = '<tr><td bgcolor="green" width="'+fraca+'"></td><td>Excelente </td></tr>';
 	}
 }
