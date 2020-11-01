@@ -1,6 +1,5 @@
-const User = require("../models/User");
-const bcrypt = require("bcrypt");
-const { response } = require("express");
+const User = require('../models/User');
+const bcrypt = require('bcrypt');
 
 module.exports = {
   async cadastrar(req, res) {
@@ -10,10 +9,7 @@ module.exports = {
 
     let user = await User.findOne({ email });
     if (user == null) {
-      bcrypt.hash(password, 10, async (err, cript) => {
-        password = cript;
-        user = await User.create({ email, password, username });
-      });
+      user = await User.create({ email, password, username });
       res.json(user);
     } else {
       res.status(400).json(null);
@@ -50,11 +46,11 @@ module.exports = {
       user.genero = genero;
       user.telefone = telefone;
       user.estado = estado;
-      user.doencasSangue = doencasSangue.split(",");
+      user.doencasSangue = doencasSangue.split(',');
 
       user.save();
       res.status(200).send(user);
-      console.log("usuario atualizou os dados" + user);
+      console.log('usuario atualizou os dados' + user);
     });
     // return  res.redirect("/");
   },
@@ -62,12 +58,12 @@ module.exports = {
   async login(req, res) {
     const { email } = req.body;
     const { password } = req.body;
-
     let user = await User.findOne({ email, password });
+
     if (user) {
-      res.json(user);
+      return res.status(200).json(user);
     } else {
-      res.status(400).json(null);
+      return res.status(400).json(null);
     }
   },
 
