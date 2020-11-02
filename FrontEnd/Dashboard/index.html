@@ -37,7 +37,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
                 <li id="menuInicio" class="nav-item"><a class="nav-link js-scroll-trigger" href="#inicio">Inicio</a></li>
-                <li id="menuCadastro" class="nav-item"><a class="nav-link js-scroll-trigger" href="#cadastro">Dados de <br> Cadastro</a></li>
+                <li id="menuCadastro" class="nav-item"><a class="nav-link js-scroll-trigger" href="#cadastro" onclick="DadosUser(event)">Dados de <br> Cadastro</a></li>
                 <li id="menuTrofeu" class="nav-item"><a class="nav-link js-scroll-trigger" href="#trofeu">Troféus</a></li>
                 <li id="menuRegistro" class="nav-item"><a class="nav-link js-scroll-trigger" href="#registro">Regitre sua Doação</a></li>
                 <li id="menuLocais" class="nav-item"><a class="nav-link js-scroll-trigger" href="#locais">Locais de Doação</a></li>
@@ -61,7 +61,7 @@
         
         <!-- CADASTRO-->
         <section class="resume-section" id="cadastro">
-            <form action="" method="GET">
+            <form onsubmit="atualizarDados(event)" method="POST">
                 <h3>Dados Cadastrais</h3>
                 <br>
                 <div class="form-row">
@@ -195,7 +195,7 @@
                 </div>
                 
                 <button type="submit" class="btn btn-primary">ATUALIZAR</button> <br> <br> <br>
-                <button type="submit" class="btn btn-primary">ESQUECI MINHA SENHA</button>
+                <button class="btn btn-primary">ESQUECI MINHA SENHA</button>
             </div>
         </form>
     </section>
@@ -212,7 +212,7 @@
 <!-- REGISTRO-->
 <section class="resume-section" id="registro">
     
-    <form action="" method="post">
+    <form onsubmit="registrarDoacao(event)" method="post">
         <h1>Registre sua doação</h1>
         <div class="form-group col-md-3">
             <br><br>
@@ -225,12 +225,12 @@
             <label >Local de Doação</label>
             <select id="localDoacao" class="form-control" required>
                 <option ></option>
-                <option value="A+">Posto Clínicas</option>
-                <option value="A-">Posto Regional de Osasco</option>
-                <option value="B+">Posto Barueri</option>
-                <option value="B-">Posto Mandaqui</option>
-                <option value="AB+">Posto Stella Maris</option>
-                <option value="AB-">Posto Dante Pazzanese</option>
+                <option value="Posto Clínicas">Posto Clínicas</option>
+                <option value="Posto Regional de Osasco">Posto Regional de Osasco</option>
+                <option value="Posto Barueri">Posto Barueri</option>
+                <option value="Posto Mandaqui">Posto Mandaqui</option>
+                <option value="Posto Stella Maris">Posto Stella Maris</option>
+                <option value="Posto Dante Pazzanese">Posto Dante Pazzanese</option>
             </select>
             <br><br><br>
             <button type="submit" class="btn btn-primary">Registrar</button>
@@ -301,5 +301,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!-- Core theme JS-->
 <script src="js/scripts.js"></script>
+<script src="js/registerScript.js"></script>
+<script src="../One Page/js/sessionScript.js"></script>
 </body>
 </html>

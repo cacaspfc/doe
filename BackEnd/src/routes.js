@@ -5,12 +5,11 @@ const SessionController = require('./controller/SessionController');
 const RegistroDoacaoController = require('./controller/RegistroDoacaoController');
 const TrofeusController = require('./controller/TrofeusController');
 
-routes.get('/', function (req, res) {});
-
 routes.post('/login', SessionController.login);
 
 routes.post('/cadastrar', SessionController.cadastrar);
 
+routes.post('/loginuser/:_id', SessionController.showUser);
 routes.put('/atualizar/:user_id', SessionController.atualizar);
 
 routes.post('/registrodoacao/:user_id', RegistroDoacaoController.store);

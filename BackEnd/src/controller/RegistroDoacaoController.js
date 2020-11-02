@@ -3,7 +3,6 @@ const RegistroDoacao = require('../models/RegistroDoacao');
 const moment = require('moment');
 const momentTz = require('moment-timezone');
 const tropy = require('../controller/TrofeusController');
-const { show } = require('../controller/TrofeusController');
 
 module.exports = {
   async store(req, res) {

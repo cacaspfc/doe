@@ -34,7 +34,6 @@ function cadastrar(event) {
     console.log(response);
     if (response.status == 200) {
       response.json().then((data) => {
-        console.log(data._id);
         localStorage.setItem('User', data._id);
         window.location.href = '../../Dashboard/index.html';
       });
@@ -67,9 +66,7 @@ function atualizarDados(event) {
   var peso = document.getElementById('peso').value;
   var altura = document.getElementById('altura').value;
 
-  //id de teste
-  // var _id = "5f8bae16daac243f2c1a9687"; //REMOVER LINHA
-  localStorage.setItem('User');
+  var _id = localStorage.getItem('User');
   fetch(baseUrl + '/atualizar', {
     method: 'put',
     headers: { 'Content-Type': 'application/json' },
@@ -90,9 +87,56 @@ function atualizarDados(event) {
     console.log(response);
     if (response.status != 400) {
       alert('Alterado com sucesso');
-      // window.location.href = "../../src/public/dashboard.html";
     } else {
       alert('Erro no cadastro!');
+    }
+  });
+}
+function DadosUser(event) {
+  event.preventDefault();
+
+  var _id = localStorage.getItem('User');
+  fetch(baseUrl + '/loginuser/' + _id, {
+    method: 'post',
+    headers: { 'Content-Type': 'application/json' },
+  }).then(function (response) {
+    if (response.status != 400) {
+      response.json().then((data) => {
+        var email = data.email;
+        var username = data.username;
+        var genero = data.genero;
+        var peso = data.peso;
+        var tipoSangue = data.tipoSangue;
+        var estado = data.estado;
+        var altura = data.altura;
+        var telefone = data.telefone;
+        var ddd;
+        if (telefone != undefined) {
+          telefone = telefone.substr(2);
+          ddd = data.telefone.substr(0, 1);
+        }
+        var endereco = data.endereco;
+        var enderecoP;
+        if (endereco != undefined) {
+          var enderecoP = endereco.split(',');
+        }
+        document.getElementById('email').value = email;
+        document.getElementById('nome').value = username;
+        // document.getElementById('datanasc').value;
+        document.getElementById('sexo').value = genero;
+        document.getElementById('cep').value = enderecoP[3];
+        document.getElementById('logradouro').value;
+        document.getElementById('numero').value;
+        document.getElementById('bairro').value;
+        document.getElementById('uf').value;
+        document.getElementById('ddd').value = ddd;
+        document.getElementById('celular').value = telefone;
+        document.getElementById('tiposanguineo').value = tipoSangue;
+        document.getElementById('peso').value = peso;
+        document.getElementById('altura').value = altura;
+      });
+    } else {
+      alert('Erro!');
     }
   });
 }

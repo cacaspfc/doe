@@ -68,6 +68,17 @@ module.exports = {
     }
   },
 
+  async showUser(req, res) {
+    const { _id } = req.params;
+    let user = await User.findById(_id);
+
+    if (user) {
+      return res.status(200).json(user);
+    } else {
+      return res.status(400).json(null);
+    }
+  },
+
   async alterLogin(req, res) {
     const { email } = req.body;
     const { password } = req.body;
