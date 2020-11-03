@@ -186,6 +186,7 @@ botaoRegistro.addEventListener("click", function(){
     
 }    ,false);  
 
+// MASCARA PARA O CAMPO CELULAR
 
 
 function mask(o, f) {
@@ -197,7 +198,6 @@ function mask(o, f) {
     }, 1);
   }
   
-// MASCARA PARA O CAMPO CELULAR
 
   function mphone(v) {
     var r = v.replace(/\D/g, "");
