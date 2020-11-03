@@ -1,3 +1,7 @@
+// ESTILIZAÇÃO DO MENU COM A SECTION INDEPENDENTES
+
+// DEFINIR VARIAVEIS MENU E SECTION
+
 var menuInicio = document.getElementById("menuInicio");  
 var menuCadastro = document.getElementById("menuCadastro");  
 var menuTrofeu = document.getElementById("menuTrofeu");  
@@ -116,36 +120,7 @@ $("#cep").focusout(function(){
 
 // FORMATAÇÃO DE DATA
 
-var data = document.getElementById("dataDoacao");
-var today = new Date();
-var dd = today.getDate();
-var mm = today.getMonth()+1; //January is 0 so need to add 1 to make it 1!
-var yyyy = today.getFullYear();
-if(dd<10){
-    dd='0'+dd
-} 
-if(mm<10){
-    mm='0'+mm
-} 
-
-today = dd+'/'+mm+'/'+yyyy;
-document.getElementById("dataDoacao").setAttribute("max", today);
-
-
-
-data.onblur = function(){
-    if(data.value  > today){
-        alert("Data inserida maior que a atual. Favor inserir uma data vaiida");
-        data.value = ("");
-        document.getElementById("dataDoacao").focus();
-        
-
-    }
-    else{
-        
-    }
-}
-
+// DEFININDO A MASCARA PARA O INPUT
 
 var input = document.getElementById("dataDoacao");
   
@@ -157,7 +132,7 @@ var dateInputMask = function dateInputMask(elm) {
     
     var len = elm.value.length;
     
-    // If we're at a particular place, let the user type the slash
+    // Se estivermos em um lugar específico, deixe o usuário digitar a barra
     // i.e., 12/12/1212
     if(len !== 1 || len !== 3) {
       if(e.keyCode == 47) {
@@ -165,12 +140,12 @@ var dateInputMask = function dateInputMask(elm) {
       }
     }
     
-    // If they don't add the slash, do it for them...
+    // Se eles não adicionarem a barra, faça isso por eles ...
     if(len === 2) {
       elm.value += '/';
     }
 
-    // If they don't add the slash, do it for them...
+    // Se eles não adicionarem a barra, faça isso por eles ...
     if(len === 5) {
       elm.value += '/';
     }
@@ -178,5 +153,35 @@ var dateInputMask = function dateInputMask(elm) {
 };
   
 dateInputMask(input);
+
+// DEFININDO VARIAVEL QUE SETA O DIA ATUAL
+var inputData = document.getElementById("dataDoacao").value;
+console.log(inputData);
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1; //Janeiro é 0, então é necessário adicionar 1 para torná-lo 1!
+var yyyy = today.getFullYear();
+if(dd<10){
+    dd='0'+dd
+} 
+if(mm<10){
+    mm='0'+mm
+} 
+
+today = dd+'/'+mm+'/'+yyyy;
+// document.getElementById("dataDoacao").setAttribute("max", today);
+
+var botaoRegistro = document.getElementById("btn-register");
+
+botaoRegistro.addEventListener("click", function(){  
+        if(inputData > today){
+            alert(today)
+        }
+        else{
+            alert("ok")
+        }
+    
+}    ,false);  
+
 
 

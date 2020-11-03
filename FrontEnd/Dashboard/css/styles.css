@@ -41,6 +41,10 @@
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
+/* ---------- */
+
+
+/* ---------- */
 
 #mapa {
   height:80vh;
@@ -10124,6 +10128,7 @@ section.resume-section {
 }
 section.resume-section .resume-section-content {
   width: 100%;
+  background-color: black;
 }
 
 @media (min-width: 768px) {
