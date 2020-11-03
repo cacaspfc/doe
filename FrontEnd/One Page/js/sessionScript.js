@@ -116,7 +116,7 @@ function DadosUser(event) {
           ddd = data.telefone.substr(0, 1);
         }
         var endereco = data.endereco;
-        var enderecoP;
+        var enderecoP = [];
         if (endereco != undefined) {
           var enderecoP = endereco.split(',');
         }
