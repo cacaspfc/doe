@@ -238,7 +238,7 @@
     <!-- REGISTRO-->
     <section class="resume-section" id="registro">
         
-        <form action="" method="">
+        <form onsubmit="registrarDoacao(event)">
             <h1>Registre sua doação</h1>
             <div class="form-group col-md-3">
                 <br><br>
@@ -262,6 +262,16 @@
                 <button id="btn-register" type="submit" class="btn btn-primary">Registrar</button>
             </div>
         </form>
+
+        <div class="container">
+        <div class="jumbotron">
+            <h2>Datatables in action!</h2>
+        </div>
+    </div>
+    <div id="tblBody">
+
+
+    </div>
     </section>
     
     
@@ -270,7 +280,6 @@
         <div id="mapa">
             
         </div>
-<<<<<<< HEAD
     </form>
 
     
@@ -332,56 +341,6 @@
         </ul>
     </div>
 </section> -->
-=======
-    </section>
-    
-    <!-- Awards-->
-    <!-- <section class="resume-section" id="awards">
-        <div class="resume-section-content">
-            <h2 class="mb-5">Awards & Certifications</h2>
-            <ul class="fa-ul mb-0">
-                <li>
-                    <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                    Google Analytics Certified Developer
-                </li>
-                <li>
-                    <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                    Mobile Web Specialist - Google Certification
-                </li>
-                <li>
-                    <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                    1
-                    <sup>st</sup>
-                    Place - University of Colorado Boulder - Emerging Tech Competition 2009
-                </li>
-                <li>
-                    <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                    1
-                    <sup>st</sup>
-                    Place - University of Colorado Boulder - Adobe Creative Jam 2008 (UI Design Category)
-                </li>
-                <li>
-                    <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                    2
-                    <sup>nd</sup>
-                    Place - University of Colorado Boulder - Emerging Tech Competition 2008
-                </li>
-                <li>
-                    <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                    1
-                    <sup>st</sup>
-                    Place - James Buchanan High School - Hackathon 2006
-                </li>
-                <li>
-                    <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                    3
-                    <sup>rd</sup>
-                    Place - James Buchanan High School - Hackathon 2005
-                </li>
-            </ul>
-        </div>
-    </section> -->
->>>>>>> 0877c482649b29638e9fd901eeaeb233af4d0552
 </div>
 <!-- Bootstrap core JS-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -389,9 +348,13 @@
 <!-- Third party plugin JS-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+ <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+ <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
 <!-- Core theme JS-->
 <script src="js/scripts.js"></script>
 <script src="js/registerScript.js"></script>
+<script src="js/trophyScript.js"></script>
 <script src="../One Page/js/sessionScript.js"></script>
 </body>
 </html>
