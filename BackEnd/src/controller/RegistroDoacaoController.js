@@ -80,7 +80,7 @@ module.exports = {
     if (register) {
       res.status(200).json(register);
     } else {
-      res.status(400).json(null);
+      res.status(400).json(register);
     }
   },
   async alter(req, res) {},
