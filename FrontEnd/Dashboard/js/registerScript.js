@@ -4,7 +4,7 @@ function registrarDoacao(event) {
   event.preventDefault();
   var genero = document.getElementById('sexo').value;
   if (genero == '') {
-    alert("preencha seus dados cadastrais primeiro")
+
   } else {
     var dataDoacao = document.getElementById('dataDoacao').value;
     var localDoacao = document.getElementById('localDoacao').value;
