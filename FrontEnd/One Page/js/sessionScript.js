@@ -105,38 +105,52 @@ function DadosUser(event) {
         var email = data.email;
         var username = data.username;
         var genero = data.genero;
+        var dataNascimento = data.dataNascimento;
         var peso = data.peso;
         var tipoSangue = data.tipoSangue;
         var estado = data.estado;
         var altura = data.altura;
         var telefone = data.telefone;
-        var ddd;
-        if (telefone != undefined) {
-          telefone = telefone.substr(2);
-          ddd = data.telefone.substr(0, 1);
-        }
         var endereco = data.endereco;
         var enderecoP = [];
         if (endereco != undefined) {
           var enderecoP = endereco.split(',');
+          document.getElementById('cep').value = enderecoP[3];
+          document.getElementById('logradouro').value = enderecoP[0];
+          document.getElementById('numero').value = enderecoP[1];
+          document.getElementById('bairro').value = enderecoP[2];
+          document.getElementById('uf').value = estado;
+        }
+        if (dataNascimento != undefined) {
+          document.getElementById('datanasc').value =
+            dataNascimento.substr(0, 2) +
+            '/' +
+            dataNascimento.substr(2, 2) +
+            '/' +
+            dataNascimento.substr(4);
+        }
+        console.log(telefone);
+        if (telefone != undefined) {
+          document.getElementById('phone').value = telefone;
+          document.getElementById('phone').dispatchEvent(new Event('keypress'));
+        }
+        if (peso != undefined) {
+          document.getElementById('peso').value = peso;
+        }
+        if (altura != undefined) {
+          document.getElementById('altura').value = altura;
         }
         document.getElementById('email').value = email;
         document.getElementById('nome').value = username;
-        // document.getElementById('datanasc').value;
-        document.getElementById('sexo').value = genero;
-        document.getElementById('cep').value = enderecoP[3];
-        document.getElementById('logradouro').value;
-        document.getElementById('numero').value;
-        document.getElementById('bairro').value;
-        document.getElementById('uf').value;
-        document.getElementById('ddd').value = ddd;
-        document.getElementById('celular').value = telefone;
+        document.getElementById('sexo').value = data.genero;
         document.getElementById('tiposanguineo').value = tipoSangue;
-        document.getElementById('peso').value = peso;
-        document.getElementById('altura').value = altura;
       });
     } else {
       alert('Erro!');
     }
   });
+}
+
+function name(params) {
+  
 }
