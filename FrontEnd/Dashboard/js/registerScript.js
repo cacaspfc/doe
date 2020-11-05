@@ -19,9 +19,9 @@ function registrarDoacao(event) {
       body: JSON.stringify({ dataDoacaoFinal, localDoacao }),
     }).then(function (response) {
       if (response.status != 400) {
-        alert('Fon');
+        alert('Doação Registrado com Sucesso');
       } else {
-        alert('Erro errado');
+        alert('Desculpe, tente fazer depois');
       }
     });
   }
