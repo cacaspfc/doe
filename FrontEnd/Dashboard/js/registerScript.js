@@ -38,8 +38,8 @@ fillTable = () => {
       let html = '';
       for (i = 0; i < data.length; i++) {
         html +=
-          '<tr>' +
-          '<td class="">' +
+          '<tr class="active">' +
+          '<td>' +
           data[i].dataDoacao +
           '</td>' +
           '<br/><br/>' +
