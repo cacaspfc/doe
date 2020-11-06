@@ -20,6 +20,8 @@ function registrarDoacao(event) {
     }).then(function (response) {
       if (response.status != 400) {
         alert('Doação Registrado com Sucesso');
+      } else if (response.status != 409) {
+        alert(response.json());
       } else {
         alert('Desculpe, tente fazer depois');
       }

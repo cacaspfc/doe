@@ -39,9 +39,9 @@ module.exports = {
           return res.status(200).json('Resgistrado');
         } else {
           return res
-            .status(200)
+            .status(409)
             .json(
-              'Desculpe, voce não pode registrar essa doacao pq existe um registro que bate com 3 meses  ' +
+              'Desculpe, voce não pode registrar essa doacao pq existe um registro que bate com esse  ' +
                 moment(donationRemember).format('YYYY-MM-DD')
             );
         }
@@ -56,9 +56,11 @@ module.exports = {
           if (dataDoacao > oldDonation) {
             await registerGenero(dataDoacao, localDoacao, user, false);
             tropy.store(user);
-            return res.status(200).json('Resgistrado');
+            return res.status(200).json('Registrado');
           } else {
-            return res.status(200).json('Tera que esperar ze gotinha');
+            return res
+              .status(409)
+              .json('Desculpe, voce não pode registrar essa doacao');
           }
         } else {
           await registerGenero(dataDoacao, localDoacao, user, false);

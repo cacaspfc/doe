@@ -31,7 +31,6 @@ function cadastrar(event) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email, username, password }),
   }).then(function (response) {
-    console.log(response);
     if (response.status == 200) {
       response.json().then((data) => {
         localStorage.setItem('User', data._id);
@@ -50,7 +49,9 @@ function atualizarDados(event) {
 
   var email = document.getElementById('email').value;
   var username = document.getElementById('nome').value;
-  var dataNascimento = document.getElementById('datanasc').value;
+  var dataNascimento = document
+    .getElementById('datanasc')
+    .value.replaceAll('/', '');
   var genero = document.getElementById('sexo').value;
   var cep = document.getElementById('cep').value;
   var logradouro = document.getElementById('logradouro').value;
@@ -59,19 +60,20 @@ function atualizarDados(event) {
   var estado = document.getElementById('uf').value;
   var endereco =
     logradouro + ',' + numero + ',' + bairro + ',' + cep + ',' + estado;
-  var telefone =
-    document.getElementById('ddd').value +
-    document.getElementById('celular').value;
+  var telefone = document
+    .getElementById('phone')
+    .value.replace('(', '')
+    .replace(')', '')
+    .trim();
   var tipoSangue = document.getElementById('tiposanguineo').value;
   var peso = document.getElementById('peso').value;
   var altura = document.getElementById('altura').value;
 
   var _id = localStorage.getItem('User');
-  fetch(baseUrl + '/atualizar', {
-    method: 'put',
+  fetch(baseUrl + '/atualizar/' + _id, {
+    method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      _id,
       email,
       username,
       dataNascimento,
@@ -84,11 +86,10 @@ function atualizarDados(event) {
       estado,
     }),
   }).then(function (response) {
-    console.log(response);
     if (response.status != 400) {
       alert('Alterado com sucesso');
     } else {
-      alert('Erro no cadastro!');
+      alert('Erro na Atualização cadastro!');
     }
   });
 }
@@ -151,6 +152,4 @@ function DadosUser(event) {
   });
 }
 
-function name(params) {
-  
-}
+function name(params) {}

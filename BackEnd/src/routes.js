@@ -10,7 +10,7 @@ routes.post('/login', SessionController.login);
 routes.post('/cadastrar', SessionController.cadastrar);
 
 routes.post('/loginuser/:_id', SessionController.showUser);
-routes.put('/atualizar/:user_id', SessionController.atualizar);
+routes.post('/atualizar/:user_id', SessionController.atualizar);
 
 routes.post('/registrodoacao/:user_id', RegistroDoacaoController.store);
 

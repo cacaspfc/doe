@@ -19,22 +19,23 @@ module.exports = {
   },
 
   async atualizar(req, res) {
-    const { _id } = req.body; // passar como parametro ou localstore
-    User.findById(_id, function (err, user) {
+    const { user_id } = req.params; // passar como parametro ou localstore
+    User.findById(user_id, function (err, user) {
       if (err) {
-        res.status(400).send(null);
         console.log(err);
+        res.status(400).send(null);
       }
-      const { email } = req.body;
-      const { endereco } = req.body;
-      const { username } = req.body;
-      const { dataNascimento } = req.body;
-      const { peso } = req.body;
-      const { altura } = req.body;
-      const { tipoSangue } = req.body;
-      const { genero } = req.body;
-      const { telefone } = req.body;
-      const { estado } = req.body;
+
+      var { email } = req.body;
+      var { endereco } = req.body;
+      var { username } = req.body;
+      var { dataNascimento } = req.body;
+      var { peso } = req.body;
+      var { altura } = req.body;
+      var { tipoSangue } = req.body;
+      var { genero } = req.body;
+      var { telefone } = req.body;
+      var { estado } = req.body;
       var { doencasSangue } = req.body;
 
       user.email = email;
@@ -47,7 +48,6 @@ module.exports = {
       user.genero = genero;
       user.telefone = telefone;
       user.estado = estado;
-      user.doencasSangue = doencasSangue.split(',');
 
       user.save();
       res.status(200).send(user);
