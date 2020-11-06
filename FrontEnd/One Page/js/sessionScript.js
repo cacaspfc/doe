@@ -130,7 +130,6 @@ function DadosUser(event) {
             '/' +
             dataNascimento.substr(4);
         }
-        console.log(telefone);
         if (telefone != undefined) {
           document.getElementById('phone').value = telefone;
           document.getElementById('phone').dispatchEvent(new Event('keypress'));

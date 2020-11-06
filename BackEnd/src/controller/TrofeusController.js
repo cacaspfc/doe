@@ -6,7 +6,6 @@ var step = 0;
 module.exports = {
   async store(user) {
     var trofeus = await Trophy.find({ user: user._id });
-    console.log(trofeus);
     if (trofeus.length >= 1) {
       atualizarTrophy();
     } else {
