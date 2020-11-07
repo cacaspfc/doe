@@ -170,18 +170,16 @@ dateInputMask(nascimento);
 
 var botaoRegistro = document.getElementById('btn-register');
 
-var sexo = document.getElementById('sexo').value;
-
 botaoRegistro.addEventListener(
   'click',
   function () {
-    
+    var sexo = document.getElementById('sexo').value;
     var data = document.getElementById('dataDoacao').value;
     var parteData = data.split('/');
     var dataAno = new Date(parteData[2], parteData[1] - 1, parteData[0]);
     if (dataAno > new Date()) {
       alert('Data incorreta');
-    } else if ((sexo = ' ')) {
+    } else if ((sexo = '')) {
       alert('Preencha seus dados cadastrais primeiro');
     } else {
       registrarDoacao(event);
@@ -215,3 +213,5 @@ function mphone(v) {
   }
   return r;
 }
+
+window.onload = DadosUser(new Event('event'));
