@@ -17,8 +17,7 @@ module.exports = {
   },
   async show(req, res) {
     const { user_id } = req.params;
-
-    var trofeus = await Trophy.find({ user: user_id });
+    var trofeus = await Trophy.findOne({ user: user_id });
     if (trofeus) {
       res.status(200).json(trofeus);
     } else {
