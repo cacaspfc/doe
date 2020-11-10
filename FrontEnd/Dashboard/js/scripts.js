@@ -224,10 +224,10 @@ function mascara_peso() {
   v = v.replace(/\D/g, "");
   v = v.replace(/^[0]+/, "");
   if (v.length <= 4 || !integer) {
-  if (v.length === 1) v = " 00," + v;
-  if (v.length === 2) v = " 0" + v[0]+","+v[1];
-  if (v.length === 3) v = " " + v[0]+v[1]+","+v[2];
-  if (v.length === 4) v = v[0]+v[1]+v[2]+","+v[3];
+  if (v.length === 1) v = "00," + v;
+  if (v.length === 2) v = v[0]+v[1];
+  if (v.length === 3) v = v[0]+v[1]+v[2];
+  if (v.length === 4) v = v[0]+v[1]+","+v[2]+v[3];
   } else {
   v = v[0]+v[1]+v[2]+","+v[3]+v[4];
   }
@@ -251,4 +251,3 @@ function mascara_peso() {
     }
   $(document).on("keyup", "#altura", mascara_altura);
 
-  

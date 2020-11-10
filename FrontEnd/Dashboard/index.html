@@ -41,6 +41,7 @@
                 <li id="menuTrofeu" class="nav-item"><a class="nav-link js-scroll-trigger" href="#trofeu">Troféus</a></li>
                 <li id="menuRegistro" class="nav-item"><a class="nav-link js-scroll-trigger" href="#registro">Regitre sua Doação</a></li>
                 <li id="menuLocais" class="nav-item"><a class="nav-link js-scroll-trigger" href="#locais">Locais de Doação</a></li>
+                <li id="menuLocais" class="nav-item"><a class="nav-link js-scroll-trigger" href="../One Page/index.html">Sair</a></li>
             </ul>
         </div>
     </nav>
@@ -125,14 +126,14 @@
                 <div class="form-row">
                     <div class="form-group col-md-3">
                         <label for="nome">Email</label>
-                        <input type="email" class="form-control" id="email" required>
+                        <input type="email" class="form-control" id="email" placeholder="123@123.com.br" required>
                     </div>    
                 </div>     
                 
                 <div class="form-row">
                     <div class="form-group col-md-2">
                         <label>Data de Nascimento</label>
-                        <input type="text" id="datanasc" class="form-control" maxlength="10" required>
+                        <input type="text" id="datanasc" class="form-control" placeholder="00/00/0000" maxlength="10" required>
                     </div>
                 </div>
                 
@@ -150,7 +151,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-2">
                         <label for="numero">Celular</label>
-                        <input type="text" class="form-control" id="phone" name="phone" onkeypress="mask(this, mphone);" onblur="mask(this, mphone);" required>
+                        <input type="text" class="form-control" id="phone" placeholder="(00) 00000-0000" name="phone" onkeypress="mask(this, mphone);" onblur="mask(this, mphone);" required>
                     </div>
                     
                 </div>
@@ -241,18 +242,18 @@
                 <div class="form-row">
                     <div class="form-group col-md-2">
                         <label for="peso">Peso</label>
-                        <input type="text" class="form-control" id="peso"  required>
+                        <input type="text" class="form-control" id="peso" placeholder="00,00"  required>
                     </div>
                 </div>
                 
                 <div class="form-row">
                     <div class="form-group col-md-2">
                         <label for="altura">Altura</label>
-                        <input type="text" class="form-control" id="altura"  required>
+                        <input type="text" class="form-control" id="altura" placeholder="0,00"  required>
                     </div>
                 </div>                    
                 
-                <button type="submit" class="btn btn-primary">ATUALIZAR</button> <br> <br> <br>
+                <br><br> <button type="submit" class="btn btn-primary">ATUALIZAR</button> <br> <br> <br> <br>
                 <button class="btn btn-primary">ESQUECI MINHA SENHA</button>
             </div>
         </form>
@@ -283,11 +284,11 @@
     <section class="resume-section" id="registro">
         
         <form onsubmit="">
-            <h1>Registre sua doação</h1>
+            <h2>Registre sua doação</h2>
             <div class="form-group col-md-3">
                 <br><br>
                 <p>Data de sua ultima doação</p> 
-                <input type="text" id="dataDoacao" maxlength="10" required />
+                <input type="text" id="dataDoacao" placeholder="00/00/0000" maxlength="10" required />
                 <br><br><br>
             </div>
             
@@ -325,52 +326,6 @@
         </div>
     </section>
     
-    <!-- Awards-->
-    <!-- <section class="resume-section" id="awards">
-        <div class="resume-section-content">
-            <h2 class="mb-5">Awards & Certifications</h2>
-            <ul class="fa-ul mb-0">
-                <li>
-                    <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                    Google Analytics Certified Developer
-                </li>
-                <li>
-                    <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                    Mobile Web Specialist - Google Certification
-                </li>
-                <li>
-                    <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                    1
-                    <sup>st</sup>
-                    Place - University of Colorado Boulder - Emerging Tech Competition 2009
-                </li>
-                <li>
-                    <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                    1
-                    <sup>st</sup>
-                    Place - University of Colorado Boulder - Adobe Creative Jam 2008 (UI Design Category)
-                </li>
-                <li>
-                    <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                    2
-                    <sup>nd</sup>
-                    Place - University of Colorado Boulder - Emerging Tech Competition 2008
-                </li>
-                <li>
-                    <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                    1
-                    <sup>st</sup>
-                    Place - James Buchanan High School - Hackathon 2006
-                </li>
-                <li>
-                    <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                    3
-                    <sup>rd</sup>
-                    Place - James Buchanan High School - Hackathon 2005
-                </li>
-            </ul>
-        </div>
-    </section> -->
 </div>
 <!-- Bootstrap core JS-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
