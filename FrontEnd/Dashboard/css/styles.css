@@ -144,9 +144,8 @@ icone de foto */
   top: -220px;
 }
 .trofeus > span > img{
-  -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
-    width: 155px;
+  width: 155px;
 
 }
 

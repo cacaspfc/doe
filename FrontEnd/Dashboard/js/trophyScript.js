@@ -9,7 +9,7 @@ function showTrophie(event) {
       let html = '';
       for (i = 0; i < data.trofeus.length; i++) {
         if (data.trofeus[i] == 'T0') {
-          document.getElementById('T0').setAttribute('');
+          document.getElementById('T0').style('filter: grayscale(0%);');
         }
       }
     })
