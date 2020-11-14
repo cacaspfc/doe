@@ -144,6 +144,11 @@ function DadosUser(event) {
         document.getElementById('nome').value = username;
         document.getElementById('sexo').value = data.genero;
         document.getElementById('tiposanguineo').value = tipoSangue;
+
+        document.querySelectorAll('#informa')[0].innerHTML += ' ' + username;
+        document.querySelectorAll('#informa')[1].innerHTML +=
+          ' ' + new Date(data.dateRegister).toLocaleString();
+        document.querySelectorAll('#informa')[2].innerHTML += ' ' + tipoSangue;
       });
     } else {
       alert('Erro!');
