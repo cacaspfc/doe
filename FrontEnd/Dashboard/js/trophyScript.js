@@ -6,10 +6,12 @@ function showTrophie(event) {
   fetch(baseUrl + '/usertrophy/' + user_id)
     .then((response) => response.json())
     .then((data) => {
-      let html = '';
       for (i = 0; i < data.trofeus.length; i++) {
         if (data.trofeus[i] == 'T0') {
-          document.getElementById('T0').style('filter: grayscale(0%);');
+          var lista = document.querySelectorAll('#T0').length;
+          for (let i = 0; i < lista; i++) {
+            document.querySelectorAll('#T0')[i].style.filter = 'grayscale(0%)';
+          }
         }
       }
     })
