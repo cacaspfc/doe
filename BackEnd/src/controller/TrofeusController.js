@@ -151,10 +151,10 @@ async function userDoacao(trof, user) {
       trof.trofeus.push('U3');
     }
   } else if (qtempoY >= 3) {
-    tt = trof.trofeus.find((element) => element == 'U3');
+    tt = trof.trofeus.find((element) => element == 'U4');
     if (tt != undefined) {
     } else {
-      trof.trofeus.push('U3');
+      trof.trofeus.push('U4');
     }
     //NOVOS TROFEUS FUTUROS
   }
