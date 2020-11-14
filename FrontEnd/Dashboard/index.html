@@ -31,7 +31,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
         <a class="navbar-brand js-scroll-trigger" href="#page-top">
             <span class="d-block d-lg-none">Doe Parceiro</span>
-            <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.png" alt="" /></span>
+            <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/menu.gif" /></span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -39,7 +39,7 @@
                 <li id="menuInicio" class="nav-item"><a class="nav-link js-scroll-trigger" href="#inicio">Inicio</a></li>
                 <li id="menuCadastro" class="nav-item"><a class="nav-link js-scroll-trigger" href="#cadastro" onclick="DadosUser(event)">Dados de <br> Cadastro</a></li>
                 <li id="menuTrofeu" class="nav-item"><a class="nav-link js-scroll-trigger" href="#trofeu" onclick="showTrophie(event)">Troféus</a></li>
-                <li id="menuRegistro" class="nav-item"><a class="nav-link js-scroll-trigger" href="#registro">Regitre sua Doação</a></li>
+                <li id="menuRegistro" class="nav-item"><a class="nav-link js-scroll-trigger" href="#registro">Registre sua Doação</a></li>
                 <li id="menuLocais" class="nav-item"><a class="nav-link js-scroll-trigger" href="#locais">Locais de Doação</a></li>
                 <li id="menuLocais" class="nav-item"><a class="nav-link js-scroll-trigger" href="../One Page/index.html">Sair</a></li>
             </ul>
@@ -97,18 +97,15 @@
                     <h3>Meus Troféus</h3>
                     <br>
                     <div class="trofeus">
-                        <span><img id="T0" src="img/78 Sem Título_20201104150628.png"></span>
-                        <span><img id="T1" src="img/78 Sem Título_20201104190717.png"></span>
-                        <span><img id="T02" src="img/79 Sem Título_20201104145452.png"></span>
-                        <span><img id="T03" src="img/79 Sem Título_20201104190747.png"></span>
-                        <span><img id="T04" src="img/81 Sem Título_20201104145104.png"></span>
-                        <span><img id="T05" src="img/81 Sem Título_20201104190810.png"></span>
-                        <span><img id="T06" src="img/94 Sem Título_20201104150945.png"></span>
-                        <span><img id="T07" src="img/94 Sem Título_20201104190846.png"></span>
-                        <span><img id="T08" src="img/95 Sem Título_20201104152827.png"></span>
-                        <span><img id="T09" src="img/95 Sem Título_20201104190915.png"></span>
-                        <span><img id="T10" src="img/96 Sem Título_20201104161616.png"></span>
-                        <span><img id="T11" src="img/96 Sem Título_20201104190936.png"></span>
+                        <span><img id="T0" src="img/T0.png"></span>
+                        <span><img id="T1" src="img/T1.png"></span>
+                        <span><img id="T2" src="img/T2.png"></span>
+                        <span><img id="T3" src="img/T3.png"></span>
+                        <span><img id="T4" src="img/T4.png"></span>
+                        <span><img id="SF1" src="img/SF1.png"></span>
+                        <span><img id="SF2" src="img/SF2.png"></span>
+                        <span><img id="SF3" src="img/SF3.png"></span>
+                        <span><img id="SF4" src="img/SF4.png"></span>
                     </div>
                 </div>
             </div>
@@ -120,7 +117,7 @@
                 <h3>Dados Cadastrais</h3>
                 <br>
                 <div class="form-row">
-                    <div class="form-group col-md-3">
+                    <div class="form-group col-md-4">
                         <label for="nome">Nome Completo</label>
                         <input type="text" class="form-control" id="nome" required>
                     </div>   
@@ -168,9 +165,9 @@
                 </div>
                 
                 <div class="form-row">
-                    <div class="form-group col-md-2">
+                    <div class="form-group col-md-4">
                         <label for="logradouro">Logradouro</label>
-                        <input type="text" class="form-control" id="logradouro" required>   
+                        <input type="text" class="form-control" id="logradouro" disabled >   
                     </div>
                 </div>
                 
@@ -184,7 +181,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-5">
                         <label for="bairro">Bairro</label>
-                        <input type="text" class="form-control" id="bairro" required>
+                        <input type="text" class="form-control" id="bairro" disabled >
                     </div>
                 </div>
                 
@@ -243,20 +240,20 @@
                 </div>
                 
                 <div class="form-row">
-                    <div class="form-group col-md-2">
+                    <div class="form-group col-md-1">
                         <label for="peso">Peso</label>
                         <input type="text" class="form-control" id="peso" placeholder="00,00"  required>
                     </div>
                 </div>
                 
                 <div class="form-row">
-                    <div class="form-group col-md-2">
+                    <div class="form-group col-md-1">
                         <label for="altura">Altura</label>
-                        <input type="text" class="form-control" id="altura" placeholder="0,00"  required>
+                        <input type="text" class="form-control" maxlength="3" id="altura" placeholder="0,00"  required>
                     </div>
                 </div>                    
                 
-                <br><br> <button type="submit" class="btn btn-primary">ATUALIZAR</button> <br> <br> <br> <br>
+                <br><br> <button type="submit" class="btn btn-primary">ATUALIZAR</button> 
                 <button class="btn btn-primary">ESQUECI MINHA SENHA</button>
             </div>
         </form>
@@ -266,18 +263,15 @@
     <!-- TROFEU-->
     <section class="resume-section" id="trofeu">
         <div class="trofeus">
-            <span><img id="T0" src="img/78 Sem Título_20201104150628.png"></span>
-            <span><img id="T01" src="img/78 Sem Título_20201104190717.png"></span>
-            <span><img id="T02" src="img/79 Sem Título_20201104145452.png"></span>
-            <span><img id="T03" src="img/79 Sem Título_20201104190747.png"></span>
-            <span><img id="T04" src="img/81 Sem Título_20201104145104.png"></span>
-            <span><img id="T05" src="img/81 Sem Título_20201104190810.png"></span>
-            <span><img id="T06" src="img/94 Sem Título_20201104150945.png"></span>
-            <span><img id="T07" src="img/94 Sem Título_20201104190846.png"></span>
-            <span><img id="T08" src="img/95 Sem Título_20201104152827.png"></span>
-            <span><img id="T09" src="img/95 Sem Título_20201104190915.png"></span>
-            <span><img id="T10" src="img/96 Sem Título_20201104161616.png"></span>
-            <span><img id="T11" src="img/96 Sem Título_20201104190936.png"></span>
+            <span><img id="T0" src="img/T0.png"></span>
+            <span><img id="T1" src="img/T1.png"></span>
+            <span><img id="T2" src="img/T2.png"></span>
+            <span><img id="T3" src="img/T3.png"></span>
+            <span><img id="T4" src="img/T4.png"></span>
+            <span><img id="SF1" src="img/SF1.png"></span>
+            <span><img id="SF2" src="img/SF2.png"></span>
+            <span><img id="SF3" src="img/SF3.png"></span>
+            <span><img id="SF4" src="img/SF4.png"></span>
         </div>
     </section>
     
