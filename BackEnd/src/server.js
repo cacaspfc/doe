@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const app = express();
 const cors = require('cors');
@@ -20,6 +22,4 @@ mongoose.connect(
   }
 );
 
-
-
-app.listen(8000);
+app.listen(process.env.PORT || 8000);
