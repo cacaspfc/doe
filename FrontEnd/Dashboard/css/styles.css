@@ -149,7 +149,13 @@ icone de foto */
 
 }
 
-/* ---------- */
+.descricao{
+  display: block;
+}
+
+#T0:hover .descricao{
+  display: none;
+}
 
 #mapa {
   height:80vh;
