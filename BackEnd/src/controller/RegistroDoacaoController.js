@@ -6,16 +6,15 @@ const tropy = require('../controller/TrofeusController');
 
 module.exports = {
   async store(req, res) {
-    var { dataDoacao } = req.body;
+    var { dataDoacaoFinal } = req.body;
     const { localDoacao } = req.body;
     const { user_id } = req.params;
 
-    dataDoacao = new Date(moment(dataDoacao));
+    dataDoacao = new Date(moment(dataDoacaoFinal));
     if (dataDoacao < new Date(moment().subtract(3, 'hour'))) {
       // Variavel boolean que é anterior
       var antesDoacao = true;
     }
-
     //Masculino 3 meses
     //Feminino  4 meses
     const user = await User.findById(user_id);
@@ -23,39 +22,55 @@ module.exports = {
     if (user) {
       if (antesDoacao) {
         if (user.genero == 'Masculino') {
-          lastRegister = await RegistroDoacao.find({ user: user_id, dataDoacao: { $gte: moment(dataDoacao).subtract(3,"month"), $lte: moment(dataDoacao).add(3,"month")}});
-        if (lastRegister.length == 0){
-          if (dataDoacao < user.dateRegister) {
+          lastRegister = await RegistroDoacao.find({
+            user: user_id,
+            dataDoacao: {
+              $gte: moment(dataDoacao).subtract(3, 'month'),
+              $lte: moment(dataDoacao).add(3, 'month'),
+            },
+          });
+          if (lastRegister.length == 0) {
+            if (dataDoacao < user.dateRegister) {
               await registerGenero(dataDoacao, localDoacao, user, false);
-          tropy.store(user);
+              tropy.store(user);
             } else {
               await registerGenero(dataDoacao, localDoacao, user, true);
-          tropy.store(user);
+              tropy.store(user);
             }
             return res.status(200).json('Registrado');
-        }else{
-              return res
+          } else {
+            return res
               .status(409)
               .json(
-                moment(lastRegister[lastRegister.length - 1].dataDoacao).format('DD-MM-YYYY')
+                moment(lastRegister[lastRegister.length - 1].dataDoacao).format(
+                  'DD-MM-YYYY'
+                )
               );
           }
-        }else{
-          lastRegister = await RegistroDoacao.find({ user: user_id, dataDoacao: { $gte: moment(dataDoacao).subtract(4,"month"), $lte: moment(dataDoacao).add(4,"month")}});
-        if (lastRegister.length == 0){
-          if (dataDoacao < user.dateRegister) {
+        } else {
+          lastRegister = await RegistroDoacao.find({
+            user: user_id,
+            dataDoacao: {
+              $gte: moment(dataDoacao).subtract(4, 'month'),
+              $lte: moment(dataDoacao).add(4, 'month'),
+            },
+          });
+          if (lastRegister.length == 0) {
+            if (dataDoacao < user.dateRegister) {
               await registerGenero(dataDoacao, localDoacao, user, false);
-          tropy.store(user);
+              tropy.store(user);
             } else {
               await registerGenero(dataDoacao, localDoacao, user, true);
-          tropy.store(user);
+              tropy.store(user);
             }
             return res.status(200).json('Registrado');
-        }else{
-              return res
+          } else {
+            return res
               .status(409)
               .json(
-                moment(lastRegister[lastRegister.length - 1].dataDoacao).format('DD-MM-YYYY')
+                moment(lastRegister[lastRegister.length - 1].dataDoacao).format(
+                  'DD-MM-YYYY'
+                )
               );
           }
         }
@@ -74,7 +89,9 @@ module.exports = {
           } else {
             return res
               .status(409)
-              .json('Desculpe, voce não pode registrar essa doacao até o prazo valido de doação vencer');
+              .json(
+                'Desculpe, voce não pode registrar essa doacao até o prazo valido de doação vencer'
+              );
           }
         } else {
           await registerGenero(dataDoacao, localDoacao, user, false);
@@ -99,8 +116,8 @@ module.exports = {
       res.status(400).json(register);
     }
   },
-  async alter(req, res) { },
-  async deleted(req, res) { },
+  async alter(req, res) {},
+  async deleted(req, res) {},
 };
 
 async function registerGenero(dataDoacao, localDoacao, user, tropy) {
