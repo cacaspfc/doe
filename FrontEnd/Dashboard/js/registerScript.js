@@ -21,8 +21,10 @@ function registrarDoacao(event) {
         alert('Desculpe, tente fazer depois');
       } else if (response.status == 409) {
         alert('Há conflito de data de doação');
-      } else {
+      } else if (response.status == 200){
         alert('Doação Registrado com Sucesso');
+      }else{
+        alert('ERROOR');
       }
     });
     fillTable();
