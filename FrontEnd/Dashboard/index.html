@@ -21,6 +21,7 @@
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnZkSTWcPPpMnLS1FZvB4l4jSloR-qPPg&callback=inicializar"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.22.2/sweetalert2.min.css" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.22.2/sweetalert2.min.js"></script>
+    <script src="js/mapa.js"></script>
     
     
     <link  rel="shortcut icon" href="img/profile.png" type="image/x-icon"> 
@@ -52,6 +53,7 @@
         <section class="resume-section" id="inicio">
             <div class="card">
                 <div class="line1">
+<<<<<<< HEAD
                     <!-- ----------------------- ----------------------->
                     <div class="container" >
                         <div class="img-circle" id="ft_perfil"></div>
@@ -72,21 +74,65 @@
                         </div> <br/>
                         <div class="row justify-content-around">
                         <div class="col-sm-6" id="informa">Tipo Sanguineo:</div>
+=======
+                    <!-- -----------------------
+                        icone foto -->
+                        <!-- <div class="">
+                            
+                        </div> -->
+                        <!-- ----------------------->
+                        <div class="container">
+                            <div class="box">
+                                <label class="avatar" for="btn">
+                                    <img src="img/perfil.jpg" alt="">
+                                </label>
+                                <input type="checkbox" id="btn">
+                                <div class="menu">
+                                    <a href="#"><i class="fa fa-upload"> <span>Upload</span></i></a>
+                                    <br>
+                                    <a href="#"><i class="fa fa-edit"> <span>Edite</span></i></a>
+                                </div>
+                            </div>
+>>>>>>> 92e4c3df6d174f149568130f49e37c11174f530f
                         </div>
-                        <!-- Resposta Tipo de Sangue: -->
-                        <div class="row">
-                            <div> </div>
+                        <!-- Informações Doador -->
+                        <div class="container informacoes">
+                            
+                            <div class="row justify-content-around">
+<<<<<<< HEAD
+                                <div class="col-sm-6" id="informa">Nome: 
+                                    <p id="nome"></p>
+=======
+                                <div class="col-sm-6" id="informa">Nome:
+                                    <p id="nomePrinci"></p>
+>>>>>>> d90abadce0ce472c772c240df8320cd492cce09f
+                                </div>
+                            </div>
+                            <div class="row justify-content-around">
+                                <div class="col-sm-6" id="informa">Parceiro desde: 
+                                    <p id="parde"></p>
+                                </div>
+                            </div> <br/>
+                            <div class="row justify-content-around">
+                                <div class="col-sm-6" id="informa">Tipo Sanguineo: 
+                                    <p id="tiposang"></p>
+                                </div>
+                            </div>
+                            <!-- Resposta Tipo de Sangue: -->
+                            <div class="row">
+                                <div> </div>
+                            </div>
                         </div>
+                        
+                        
                     </div>
-
-
                 </div>
-                </div>
-              <!-- Troféus -->
+                <!-- Troféus -->
                 <div class="line2">
                     <h3>Meus Troféus</h3>
                     <br>
                     <div class="trofeus">
+                        <span><img id="C0" src="img/C0.png"></span>
                         <span><img id="T0" src="img/T0.png"></span>
                         <span><img id="T1" src="img/T1.png"></span>
                         <span><img id="T2" src="img/T2.png"></span>
@@ -270,17 +316,58 @@
     
     <!-- TROFEU-->
     <section class="resume-section" id="trofeu">
+        <h2>Troféus</h2>
+        <p>Passe o mouse por cima do troféu para saber como adquiri-lo</p>
+
         <div class="trofeus">
-            <span><img id="T0" src="img/T0.png"></span>
-            <span><img id="T1" src="img/T1.png"></span>
-            <span><img id="T2" src="img/T2.png"></span>
-            <span><img id="T3" src="img/T3.png"></span>
-            <span><img id="T4" src="img/T4.png"></span>
-            <span><img id="SF1" src="img/SF1.png"></span>
-            <span><img id="SF2" src="img/SF2.png"></span>
-            <span><img id="SF3" src="img/SF3.png"></span>
-            <span><img id="SF4" src="img/SF4.png"></span>
+            <div class="figura">
+                <img id="C0" src="img/C0.png"> </span>
+                <figcaption class="figure-caption">Troféu concedido pela criação da conta.</figcaption> 
+            </div>
+            <div class="figura">
+                <img id="T0" src="img/T0.png"> </span>
+                <figcaption class="figure-caption">Troféu concedido após o primeiro registro de doação.</figcaption> 
+            </div>
         </div>
+
+        <div class="trofeus">
+            <div class="figura">
+                <img id="T4" src="img/T4.png"> </span>
+                <figcaption class="figure-caption">Troféu GOLD <br> Concedido após o 2° registro de doação</figcaption> 
+            </div>
+            <div class="figura">
+                <img id="T3" src="img/T3.png"> </span>
+                <figcaption class="figure-caption">Troféu EMERALD <br> Concedido após o 10° registro de doação</figcaption> 
+            </div>
+            <div class="figura">
+                <img id="T2" src="img/T2.png"> </span>
+                <figcaption class="figure-caption">Troféu RUBY <br> Concedido após o 5° registro de doação</figcaption> 
+            </div>
+            <div class="figura">
+                <img id="T1" src="img/T1.png"> </span>
+                <figcaption class="figure-caption">Troféu SAPPHIRE <br> Concedido após o 15° registro de doação</figcaption> 
+            </div>
+        </div>
+
+        <div class="trofeus">
+            <div class="figura">
+                <img id="SF1" src="img/SF4.png"> </span>
+                <figcaption class="figure-caption">Troféu GOLD DONATION <br> Concedido após o registro de doações em sequencia durante 1 ano </figcaption> 
+            </div>
+            <div class="figura">
+                <img id="SF2" src="img/SF3.png"> </span>
+                <figcaption class="figure-caption">Troféu EMERALD DONATION <br> Concedido após o registro de doações em sequencia durante 2 anos </figcaption> 
+            </div>
+            <div class="figura">
+                <img id="SF3" src="img/SF2.png"> </span>
+                <figcaption class="figure-caption">Troféu RUBY DONATION <br> Concedido após o registro de doações em sequencia durante 3 anos </figcaption> 
+            </div>
+            <div class="figura">
+                <img id="SF4" src="img/SF1.png"> </span>
+                <figcaption class="figure-caption">Troféu SAPPHIRE DONATION <br> Concedido após o registro de doações em sequencia durante 4 anos</figcaption> 
+            </div>
+        </div>
+            
     </section>
     
     
@@ -312,20 +399,28 @@
                 <button id="btn-register" type="submit" class="btn btn-primary">Registrar</button>
             </div>
         </form>
-
-        <div class="container text-center">
-        <div class="jumbotron col-sm-5">
-            <h3>Consulta</h3>
-        </div>
-    </div>
-    <div id="tblBody">
         
-    </div>
+        <div class="container text-center">
+            <div class="jumbotron col-sm-5">
+                <h3>Consulta</h3>
+            </div>
+        </div>
+        <div id="tblBody">
+            
+        </div>
     </section>
     
     
     <!-- LOCAIS DE DOAÇÃO-->
     <section class="resume-section" id="locais"> 
+        <div class="botao">
+            <button onclick="mapa1()">Posto Clínicas</button>
+            <button onclick="mapa2()">Posto Regional de Osasco</button>
+            <button onclick="mapa3()">Posto Barueri</button>
+            <button onclick="mapa4()">Posto Mandaqui</button>
+            <button onclick="mapa5()">Posto Stella Maris</button>
+            <button onclick="mapa6()">Posto Dante Pazzanese</button>
+        </div>
         <div id="mapa">
             
         </div>
@@ -338,9 +433,9 @@
 <!-- Third party plugin JS-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
- <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
- <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
- <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
 <!-- Core theme JS-->
 <script src="../One Page/js/sessionScript.js"></script>
 <script src="js/registerScript.js"></script>

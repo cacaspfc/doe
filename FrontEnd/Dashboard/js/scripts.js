@@ -80,23 +80,6 @@ menuLocais.addEventListener(
   false
 );
 
-// PARAMETRIZAÇÃO API MAPS
-
-function inicializar() {
-  var coordenadas = { lat: -22.912869, lng: -43.228963 };
-
-  var mapa = new google.maps.Map(document.getElementById('mapa'), {
-    zoom: 15,
-    center: coordenadas,
-  });
-
-  var marker = new google.maps.Marker({
-    position: coordenadas,
-    map: mapa,
-    title: 'Meu marcador',
-  });
-}
-
 // PARAMETRIZAÇÃO API VIACEP /PUXAR OS DADOS AUTOMATICAMENTE PELO CEP
 
 $('#cep').focusout(function () {
@@ -171,7 +154,7 @@ dateInputMask(nascimento);
 var botaoRegistro = document.getElementById('btn-register');
 
 botaoRegistro.addEventListener(
- 'click',
+  'click',
   function () {
     var sexo = document.getElementById('sexo').value;
     var data = document.getElementById('dataDoacao').value;
@@ -179,6 +162,7 @@ botaoRegistro.addEventListener(
     var dataAno = new Date(parteData[2], parteData[1] - 1, parteData[0]);
     if (dataAno > new Date()) {
       alert('Data incorreta');
+      preventDefault(new Event('event'));
     } else if ((sexo = '')) {
       alert('Preencha seus dados cadastrais primeiro');
     } else {
@@ -216,36 +200,31 @@ function mphone(v) {
 
 window.onload = DadosUser(new Event('event'));
 
-
 // MASCARA PESO
 
 function mascara_peso() {
-  var v = this.value, integer = v.split(".")[0];
-  v = v.replace(/\D/g, "");
-  v = v.replace(/^[0]+/, "");
+  var v = this.value,
+    integer = v.split('.')[0];
+  v = v.replace(/\D/g, '');
+  v = v.replace(/^[0]+/, '');
   if (v.length <= 4 || !integer) {
-  if (v.length === 1) v = "00," + v;
-  if (v.length === 2) v = v[0]+v[1];
-  if (v.length === 3) v = v[0]+v[1]+v[2];
-  if (v.length === 4) v = v[0]+v[1]+","+v[2]+v[3];
+    if (v.length === 1) v = '00,' + v;
+    if (v.length === 2) v = v[0] + v[1];
+    if (v.length === 3) v = v[0] + v[1] + v[2];
+    if (v.length === 4) v = v[0] + v[1] + ',' + v[2] + v[3];
   } else {
-  v = v[0]+v[1]+v[2]+","+v[3]+v[4];
+    v = v[0] + v[1] + v[2] + ',' + v[3] + v[4];
   }
   console.log(v);
-  
+
   this.value = v;
-  }
-  
-  $(document).on("keyup", "#peso", mascara_peso);
+}
 
+$(document).on('keyup', '#peso', mascara_peso);
 
-  // MASCARA ALTURA
+// MASCARA ALTURA
 
-  function mascara_altura() {
-    var v = this.value, integer = v.split(".")[0];
-    v = v.replace(/\D/g, "");
-    v = v.replace(/^[0]+/, "");
-
+<<<<<<< HEAD
     if (v.length === 3) v = " " + v[0]+","+v[1]+v[2];
     this.value = v;
     }
@@ -269,3 +248,15 @@ function mascara_peso() {
       setTimeout("verificarCarregameto()",1);
     }
   }
+=======
+function mascara_altura() {
+  var v = this.value,
+    integer = v.split('.')[0];
+  v = v.replace(/\D/g, '');
+  v = v.replace(/^[0]+/, '');
+
+  if (v.length === 3) v = ' ' + v[0] + ',' + v[1] + v[2];
+  this.value = v;
+}
+$(document).on('keyup', '#altura', mascara_altura);
+>>>>>>> 92e4c3df6d174f149568130f49e37c11174f530f

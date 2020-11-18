@@ -11,7 +11,6 @@ function registrarDoacao(event) {
     var dataDoacaoInit = dataDoacao.split('/');
     var dataDoacaoFinal =
       dataDoacaoInit[2] + '-' + dataDoacaoInit[1] + '-' + dataDoacaoInit[0];
-
     fetch(baseUrl + '/registrodoacao/' + user_id, {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
@@ -21,8 +20,10 @@ function registrarDoacao(event) {
         alert('Desculpe, tente fazer depois');
       } else if (response.status == 409) {
         alert('Há conflito de data de doação');
-      } else {
+      } else if (response.status == 200) {
         alert('Doação Registrado com Sucesso');
+      } else {
+        alert('ERROOR');
       }
     });
     fillTable();
