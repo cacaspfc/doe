@@ -250,4 +250,22 @@ function mascara_peso() {
     this.value = v;
     }
   $(document).on("keyup", "#altura", mascara_altura);
+// ====================================================
 
+  // Icone Avatar
+  var carregar;
+  function loadImg(img){
+    carregar = new Image();
+    carregar.src = img;
+    document.getElementById("ft_perfil").innerHTML = "Loading";
+    setTimeout("verificarCarregameto()",1);
+  }
+
+  function verificarCarregameto(){
+
+    if(carregar.complete){
+      document.getElementById("ft_perfil").innerHTML = "<img src=\"" + carregar.src + ".png \" width=50 />";
+    } else {
+      setTimeout("verificarCarregameto()",1);
+    }
+  }

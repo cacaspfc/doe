@@ -52,25 +52,15 @@
         <section class="resume-section" id="inicio">
             <div class="card">
                 <div class="line1">
-                    <!-- -----------------------
-                        icone foto -->
-                    <!-- <div class="">
-                      
-                    </div> -->
-                    <!-- ----------------------->
-                <div class="container">
-                    <div class="box">
-                        <label class="avatar" for="btn">
-                            <img src="img/perfil.jpg" alt="">
-                        </label>
-                        <input type="checkbox" id="btn">
-                        <div class="menu">
-                            <a href="#"><i class="fa fa-upload"> <span>Upload</span></i></a>
-                            <br>
-                            <a href="#"><i class="fa fa-edit"> <span>Edite</span></i></a>
-                        </div>
+                    <!-- ----------------------- ----------------------->
+                    <div class="container" >
+                        <div class="img-circle" id="ft_perfil"></div>
+                        <!-- <select class="mdb-select">
+                            <option disabled selected> Seu Avatar </option>
+                            <option> M </option>
+                            <option> F </option>
+                        </select> -->
                     </div>
-                </div>
                     <!-- Informações Doador -->
                     <div class="container informacoes">
 
@@ -251,7 +241,25 @@
                         <label for="altura">Altura</label>
                         <input type="text" class="form-control" maxlength="3" id="altura" placeholder="0,00"  required>
                     </div>
-                </div>                    
+                </div>
+                
+                <!--    --------Foto Perfil---------    -->
+                <div class="form-row">
+                    <div class="form-group col-md-1">
+                        <label for="">Avatar</label>
+                        <select name="perfil" onchange="loadImg(this.value)"> 
+                            <option value="#">Selicione</option>
+                            <option value="img/avatar1.png">Avatar 1</option>
+                            <option value="img/avatar2.png">Avatar 2</option>
+                            <option value="img/avatar3.png">Avatar 3</option>
+                            <option value="img/avatar4.png">Avatar 4</option>
+                            <!-- <option value="img/avatar1.png">Avatar 5</option>
+                            <option value="img/avatar1.png">Avatar 6</option>
+                            <option value="img/avatar1.png">Avatar 7</option> -->
+                        </select>
+                        <div class="form-group" id="ft_perfil"> </div>    
+                    </div>
+                </div>
                 
                 <br><br> <button type="submit" class="btn btn-primary">ATUALIZAR</button> 
                 <button class="btn btn-primary">ESQUECI MINHA SENHA</button>

@@ -59,72 +59,11 @@ background-color: var(--red);
 }
 /* =============================================
 icone de foto */
-.box {
-  display: flex;
-  width: 200px;
-  height: 200px;
-  position: relative;
-  top:25px;
-  left:30px;
-}
-.avatar::after {
-  opacity: 0;
-  font-family: FontAwesome;
-  content: "\f040";
-  color: #fff;
-  font-size: 2.5rem;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 17px;
-  left: 10px;
-  width: 130px;
-  height: 130px;
-  z-index: 2;
-  background-color: rgba(0,0,0,0.5);
-  border-radius: 50%;
-  cursor: pointer;
-  transition: 350ms ease-in-out;
-}
-.avatar:hover::after {
-  opacity: 1;
-}
-
-.avatar {
-  box-sizing: border-box;
-  border: 1px solid rgb(8, 8, 8);
-  border-radius: 50%;
-  overflow: hidden;
-}
-
-.menu {
-  position: absolute;
-  opacity: 0;
-  width: 100px;
-  height: auto;
-  background-color: #fff;
-  box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
-  box-sizing: border-box;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  top: 60%;
-  left: 60%;
-  z-index: -1;
-  transition: 450ms ease-in-out;
-}
-.box input {
-  display: none;
-}
-.box input:checked + div.menu {
-  opacity: 1;
-  z-index: 999;
-}
 /* ============================================= */
 /* ========================================== */
  .informacoes{
  position: relative;
- top: -140px; 
+ top: 50px; 
 }
 #informa{
   font-family:'Century Gothic';
