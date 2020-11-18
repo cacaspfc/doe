@@ -63,12 +63,8 @@ icone de foto */
 /* ========================================== */
  .informacoes{
  position: relative;
-<<<<<<< HEAD
  top: 50px; 
-=======
- top: -140px; 
  
->>>>>>> 92e4c3df6d174f149568130f49e37c11174f530f
 }
 #informa{
   font-family:'Century Gothic';

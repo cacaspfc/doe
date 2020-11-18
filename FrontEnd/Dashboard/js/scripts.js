@@ -222,33 +222,10 @@ function mascara_peso() {
 
 $(document).on('keyup', '#peso', mascara_peso);
 
-// MASCARA ALTURA
-
-<<<<<<< HEAD
-    if (v.length === 3) v = " " + v[0]+","+v[1]+v[2];
-    this.value = v;
-    }
-  $(document).on("keyup", "#altura", mascara_altura);
 // ====================================================
 
-  // Icone Avatar
-  var carregar;
-  function loadImg(img){
-    carregar = new Image();
-    carregar.src = img;
-    document.getElementById("ft_perfil").innerHTML = "Loading";
-    setTimeout("verificarCarregameto()",1);
-  }
+// MASCARA ALTURA
 
-  function verificarCarregameto(){
-
-    if(carregar.complete){
-      document.getElementById("ft_perfil").innerHTML = "<img src=\"" + carregar.src + ".png \" width=50 />";
-    } else {
-      setTimeout("verificarCarregameto()",1);
-    }
-  }
-=======
 function mascara_altura() {
   var v = this.value,
     integer = v.split('.')[0];
@@ -259,4 +236,21 @@ function mascara_altura() {
   this.value = v;
 }
 $(document).on('keyup', '#altura', mascara_altura);
->>>>>>> 92e4c3df6d174f149568130f49e37c11174f530f
+
+// Icone Avatar
+var carregar;
+function loadImg(img) {
+  carregar = new Image();
+  carregar.src = img;
+  document.getElementById('ft_perfil').innerHTML = 'Loading';
+  setTimeout('verificarCarregameto()', 1);
+}
+
+function verificarCarregameto() {
+  if (carregar.complete) {
+    document.getElementById('ft_perfil').innerHTML =
+      '<img src="' + carregar.src + '.png " width=50 />';
+  } else {
+    setTimeout('verificarCarregameto()', 1);
+  }
+}

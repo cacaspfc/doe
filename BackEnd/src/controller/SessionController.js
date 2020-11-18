@@ -37,6 +37,7 @@ module.exports = {
       var { telefone } = req.body;
       var { estado } = req.body;
       var { doencasSangue } = req.body;
+      var { perfilFoto } = req.body;
 
       user.email = email;
       user.username = username;
@@ -48,7 +49,7 @@ module.exports = {
       user.genero = genero;
       user.telefone = telefone;
       user.estado = estado;
-
+      user.fotoPerfil = perfilFoto,
       user.save();
       res.status(200).send(user);
       console.log('usuario atualizou os dados' + user);
