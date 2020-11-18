@@ -69,7 +69,7 @@ function atualizarDados(event) {
   var peso = document.getElementById('peso').value;
   var altura = document.getElementById('altura').value;
 
-  var fotoPerfil = document.getElementById('').value;
+  var perfilFoto = document.getElementById('fotoPefil').value;
   var _id = localStorage.getItem('User');
   fetch(baseUrl + '/atualizar/' + _id, {
     method: 'POST',
@@ -85,7 +85,7 @@ function atualizarDados(event) {
       peso,
       altura,
       estado,
-      fotoPerfil,
+      perfilFoto,
     }),
   }).then(function (response) {
     if (response.status != 400) {
@@ -147,11 +147,13 @@ function DadosUser(event) {
         document.getElementById('sexo').value = data.genero;
         document.getElementById('tiposanguineo').value = tipoSangue;
 
+        document.getElementById('ft_avatar').innerHTML =
+          "<img src='" + data.fotoPerfil + "'>" || '';
         document.getElementById('nomePrinci').innerHTML = username;
         document.getElementById('parde').innerHTML = new Date(data.dateRegister)
           .toLocaleString()
           .substr(0, 10);
-        document.getElementById('tiposang').innerHTML = tipoSangue;
+        document.getElementById('tiposang').innerHTML = tipoSangue || '';
       });
     } else {
       alert('Erro!');

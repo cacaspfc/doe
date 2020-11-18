@@ -49,7 +49,7 @@ module.exports = {
       user.genero = genero;
       user.telefone = telefone;
       user.estado = estado;
-      user.fotoPerfil = perfilFoto,
+      user.fotoPerfil = perfilFoto;
       user.save();
       res.status(200).send(user);
       console.log('usuario atualizou os dados' + user);
