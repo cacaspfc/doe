@@ -125,11 +125,13 @@ icone de foto */
  .informacoes{
  position: relative;
  top: -140px; 
+ 
 }
 #informa{
   font-family:'Century Gothic';
   font-size: 23px; 
   color: white;
+  display: flex;
 }
 /* ========================================== */
 /* .cirle{
@@ -146,16 +148,40 @@ icone de foto */
 .trofeus > span > img{
   filter: grayscale(100%);
   width: 155px;
-
 }
 
-.descricao{
-  display: block;
+#C0{
+  filter: grayscale(0%);
 }
 
-#T0:hover .descricao{
+.trofeus{
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.figura{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 12.5rem;
+  height: 27vh;
+  align-items: center;
+}
+.figura > img{
+  width: 175px;
+}
+
+.figure-caption{
   display: none;
 }
+
+.figura:hover figcaption{
+  display: block;
+  position: relative;
+  bottom: 35px;
+  color: black;
+}
+
 
 #mapa {
   height:80vh;
