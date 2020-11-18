@@ -249,7 +249,7 @@ function loadImg(img) {
 function verificarCarregameto() {
   if (carregar.complete) {
     document.getElementById('ft_perfil').innerHTML =
-      '<img src="' + carregar.src + '.png " width=50 />';
+      '<img class="avatarPerfil" src="' + carregar.src + '" width=50 />';
   } else {
     setTimeout('verificarCarregameto()', 1);
   }

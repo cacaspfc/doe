@@ -58,8 +58,12 @@ background-color: var(--red);
   border-radius: 10px;
 }
 /* =============================================
-icone de foto */
-/* ============================================= */
+icone avatar */
+.avatarPerfil {
+  width: 180px;
+  padding: 10px;
+}
+
 /* ========================================== */
  .informacoes{
  position: relative;
