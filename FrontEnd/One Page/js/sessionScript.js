@@ -145,10 +145,11 @@ function DadosUser(event) {
         document.getElementById('sexo').value = data.genero;
         document.getElementById('tiposanguineo').value = tipoSangue;
 
-        document.querySelectorAll('#informa')[0].innerHTML += ' ' + username;
-        document.querySelectorAll('#informa')[1].innerHTML +=
-          ' ' + new Date(data.dateRegister).toLocaleString();
-        document.querySelectorAll('#informa')[2].innerHTML += ' ' + tipoSangue;
+        document.getElementById('nomePrinci').innerHTML = username;
+        document.getElementById('parde').innerHTML = new Date(
+          data.dateRegister
+        ).toLocaleString();
+        document.getElementById('tiposang').innerHTML = tipoSangue;
       });
     } else {
       alert('Erro!');

@@ -121,7 +121,7 @@ module.exports = {
 };
 
 async function registerGenero(dataDoacao, localDoacao, user, tropy) {
-  dataDoacao = new Date(moment(dataDoacao).add(1, 'd').format('YYYY-MM-DD'));
+  dataDoacao = new Date(moment(dataDoacao).format('YYYY-MM-DD'));
   var proximaDataDoacao = new Date(moment(dataDoacao).subtract(1, 'day'));
   if (user.genero == 'Masculino') {
     const registroDoacao = await RegistroDoacao.create({
