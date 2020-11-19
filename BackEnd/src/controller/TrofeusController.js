@@ -15,6 +15,12 @@ module.exports = {
       });
     }
   },
+  async planStore(user) {
+    Trophy.create({
+      user: user._id,
+      trofeus: [],
+    });
+  },
   async show(req, res) {
     const { user_id } = req.params;
     var trofeus = await Trophy.findOne({ user: user_id });

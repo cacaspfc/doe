@@ -167,6 +167,7 @@ botaoRegistro.addEventListener(
       alert('Preencha seus dados cadastrais primeiro');
     } else {
       registrarDoacao(event);
+      fillTable();
     }
   },
   false

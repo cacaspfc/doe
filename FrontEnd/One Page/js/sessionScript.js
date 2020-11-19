@@ -147,8 +147,15 @@ function DadosUser(event) {
         document.getElementById('sexo').value = data.genero;
         document.getElementById('tiposanguineo').value = tipoSangue;
 
-        document.getElementById('ft_avatar').innerHTML =
-          "<img src='" + data.fotoPerfil + "'>" || '';
+        if (data.fotoPerfil !== undefined) {
+          document.getElementById('ft_avatar').innerHTML =
+            "<img src='" + data.fotoPerfil + "'>";
+
+          document.getElementById('ft_perfil').innerHTML =
+            '<img class="avatarPerfil" src="' +
+            data.fotoPerfil +
+            '" width=50 />';
+        }
         document.getElementById('nomePrinci').innerHTML = username;
         document.getElementById('parde').innerHTML = new Date(data.dateRegister)
           .toLocaleString()

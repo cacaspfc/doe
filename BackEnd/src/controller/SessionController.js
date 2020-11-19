@@ -1,5 +1,6 @@
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
+const Trophy = require('./TrofeusController');
 
 module.exports = {
   async cadastrar(req, res) {
@@ -10,6 +11,7 @@ module.exports = {
     let user = await User.findOne({ email });
     if (user == null) {
       user = await User.create({ email, password, username });
+      Trophy.planStore();
       res.json(user);
     } else if (user) {
       res.status(409).json(null);

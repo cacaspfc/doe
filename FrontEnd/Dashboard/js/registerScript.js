@@ -11,7 +11,7 @@ function fillTable() {
         html +=
           '<tr class="active">' +
           '<td>' +
-          data[i].dataDoacao +
+          data[i].dataDoacao.substr(0, 10) +
           '</td>' +
           '<br/><br/>' +
           '<td class="">' +
@@ -57,8 +57,8 @@ function registrarDoacao(event) {
       } else {
         alert('ERROOR');
       }
+      fillTable();
     });
-    fillTable();
   }
 }
 function showRegister(event) {}
