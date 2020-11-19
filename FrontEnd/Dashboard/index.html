@@ -54,94 +54,82 @@
             <div class="card">
                 <div class="line1">
                     <!-- ----------------------->
+                    
+                    
+                    <!-- Informações Doador -->
+                    <div class="container informacoes">
                         
-                      
-                        <!-- Informações Doador -->
-                        <div class="container informacoes">
-                            
-                            <div class="row justify-content-around">
-                                <div class="col-sm-6" id="informa">Nome:
-                                    <p id="nomePrinci"></p>
-                                </div>
-                            </div>
-                            <div class="row justify-content-around">
-                                <div class="col-sm-6" id="informa">Parceiro desde: 
-                                    <p id="parde"></p>
-                                </div>
-                            </div> <br/>
-                            <div class="row justify-content-around">
-                                <div class="col-sm-6" id="informa">Tipo Sanguineo: 
-                                    <p id="tiposang"></p>
-                                </div>
-                            </div>
-                            <!-- Resposta Tipo de Sangue: -->
-                            <div class="row">
-                                <div> </div>
+                        <div class="row justify-content-around">
+                            <div class="col-sm-6" id="informa">Nome:
+                                <p id="nomePrinci"></p>
                             </div>
                         </div>
-                        
-                        
-                    </div>
-                </div>
-                <!-- Troféus -->
-                <div class="line2">
-                    <h3>Meus Troféus</h3>
-                    <br>
-                    <div class="trofeus">
-                        <span><img id="C0" src="img/C0.png"></span>
-                        <span><img id="T0" src="img/T0.png"></span>
-                        <span><img id="T1" src="img/T1.png"></span>
-                        <span><img id="T2" src="img/T2.png"></span>
-                        <span><img id="T3" src="img/T3.png"></span>
-                        <span><img id="T4" src="img/T4.png"></span>
-                        <span><img id="SF1" src="img/SF1.png"></span>
-                        <span><img id="SF2" src="img/SF2.png"></span>
-                        <span><img id="SF3" src="img/SF3.png"></span>
-                        <span><img id="SF4" src="img/SF4.png"></span>
+                        <div class="row justify-content-around">
+                            <div class="col-sm-6" id="informa">Parceiro desde: 
+                                <p id="parde"></p>
+                            </div>
+                        </div> <br/>
+                        <div class="row justify-content-around">
+                            <div class="col-sm-6" id="informa">Tipo Sanguineo: 
+                                <p id="tiposang"></p>
+                            </div>
+                        </div>
+                        <!-- Resposta Tipo de Sangue: -->
+                        <div class="row">
+                            <div> </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+            <!-- Troféus -->
+            <div class="line2">
+                <h3>Meus Troféus</h3>
+                <br>
+                <div class="trofeus">
+                    <span><img id="C0" src="img/C0.png"></span>
+                    <span><img id="T0" src="img/T0.png"></span>
+                    <span><img id="T1" src="img/T1.png"></span>
+                    <span><img id="T2" src="img/T2.png"></span>
+                    <span><img id="T3" src="img/T3.png"></span>
+                    <span><img id="T4" src="img/T4.png"></span>
+                    <span><img id="SF1" src="img/SF1.png"></span>
+                    <span><img id="SF2" src="img/SF2.png"></span>
+                    <span><img id="SF3" src="img/SF3.png"></span>
+                    <span><img id="SF4" src="img/SF4.png"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CADASTRO-->
+    <section class="resume-section-cadastro" id="cadastro">
+        <h3>DADOS CADASTRAIS</h3>
         
-        <!-- CADASTRO-->
-        <section class="resume-section" id="cadastro">
-            <form onsubmit="atualizarDados(event)" method="POST">
-                <h3>Dados Cadastrais</h3>
+        <div class="cadastro-container ">
+            <form class="form-cadastro " onsubmit="atualizarDados(event)" method="POST">
+                <h4>INFORMAÇÕES DOADOR</h4>
                 <br>
                 <div class="form-row">
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-10">
                         <label for="nome">Nome Completo</label>
                         <input type="text" class="form-control" id="nome" required>
                     </div>   
                 </div>
                 
                 <div class="form-row">
-                    <div class="form-group col-md-3">
+                    <div class="form-group col-md-10">
                         <label for="nome">Email</label>
                         <input type="email" class="form-control" id="email" placeholder="123@123.com.br" required>
                     </div>    
                 </div>     
                 
                 <div class="form-row">
-                    <div class="form-group col-md-2">
+                    <div class="form-group col-md-5">
                         <label>Data de Nascimento</label>
                         <input type="text" id="datanasc" class="form-control" placeholder="00/00/0000" maxlength="10" required>
                     </div>
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group col-md-2">
-                        <label for="sexo">Sexo</label>
-                        <select id="sexo" class="form-control" required>
-                            <option></option>
-                            <option value="Masculino">Masculino</option>
-                            <option value="Feminino">Feminino</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group col-md-2">
+                    
+                    <div class="form-group col-md-5">
                         <label for="numero">Celular</label>
                         <input type="text" class="form-control" id="phone" placeholder="(00) 00000-0000" name="phone" onkeypress="mask(this, mphone);" onblur="mask(this, mphone);" required>
                     </div>
@@ -149,73 +137,7 @@
                 </div>
                 
                 <div class="form-row">
-                    <div class="form-group col-md-2">
-                        <label for="cep">CEP</label>
-                        <input type="text" class="form-control" id="cep" placeholder="00000-000" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
-                    </div>
-                    
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group col-md-4">
-                        <label for="logradouro">Logradouro</label>
-                        <input type="text" class="form-control" id="logradouro" disabled >   
-                    </div>
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group col-md-1">
-                        <label for="numero">Numero</label>
-                        <input type="text" class="form-control" id="numero" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
-                    </div>
-                </div>
-                
-                <div class="form-row">
                     <div class="form-group col-md-5">
-                        <label for="bairro">Bairro</label>
-                        <input type="text" class="form-control" id="bairro" disabled >
-                    </div>
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group col-md-3">
-                        <label for="estado">Estado</label>
-                        <select id="uf" class="form-control" required>
-                            <option ></option>
-                            <option value="Acre">Acre</option>
-                            <option value="Alagoas">Alagoas</option>
-                            <option value="Amapá">Amapá</option>
-                            <option value="Amazonas">Amazonas</option>
-                            <option value="Bahia">Bahia</option>
-                            <option value="Ceará">Ceará</option>
-                            <option value="Distrito Federal">Distrito Federal</option>
-                            <option value="Espírito Santo">Espírito Santo</option>
-                            <option value="Goiás">Goiás</option>
-                            <option value="Maranhão">Maranhão</option>
-                            <option value="Mato Grosso">Mato Grosso</option>
-                            <option value="Mato Grosso do Sul">Mato Grosso do Sul</option>
-                            <option value="Minas Gerais">Minas Gerais</option>
-                            <option value="Pará">Pará</option>
-                            <option value="Paraíba">Paraíba</option>
-                            <option value="Paraná">Paraná</option>
-                            <option value="Pernambuco">Pernambuco</option>
-                            <option value="Piauí">Piauí</option>
-                            <option value="Rio de Janeiro">Rio de Janeiro</option>
-                            <option value="Rio Grande do Norte">Rio Grande do Norte</option>
-                            <option value="Rio Grande do Sul">Rio Grande do Sul</option>
-                            <option value="Rondônia">Rondônia</option>
-                            <option value="Roraima">Roraima</option>
-                            <option value="Santa Catarina">Santa Catarina</option>
-                            <option value="São Paulo">São Paulo</option>
-                            <option value="Sergipe">Sergipe</option>
-                            <option value="Tocantins">Tocantins</option>
-                            
-                        </select>
-                    </div>            
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group col-md-">
                         <label for="tiposanguineo">Tipo Sanguineo</label>
                         <select id="tiposanguineo" class="form-control" required>
                             <option ></option>
@@ -229,44 +151,128 @@
                             <option value="O-">O-</option>
                         </select>
                     </div>
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group col-md-1">
-                        <label for="peso">Peso</label>
-                        <input type="text" class="form-control" id="peso" placeholder="00,00"  required>
+                    <div class="form-group col-md-5">
+                        <label for="sexo">Sexo</label>
+                        <select id="sexo" class="form-control" required>
+                            <option></option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Feminino">Feminino</option>
+                        </select>
                     </div>
                 </div>
                 
                 <div class="form-row">
-                    <div class="form-group col-md-1">
+                    <div class="form-group col-md-5">
+                        <label for="peso">Peso</label>
+                        <input type="text" class="form-control" id="peso" placeholder="00,00"  required>
+                    </div>
+                    <div class="form-group col-md-5">
                         <label for="altura">Altura</label>
                         <input type="text" class="form-control" maxlength="3" id="altura" placeholder="0,00"  required>
                     </div>
                 </div>
                 
-                <!--    --------Foto Perfil---------    -->
                 <div class="form-row">
-                    <div class="form-group col-md-1">
+                    <div class="form-group col-md-5">
                         <label for="">Avatar</label>
-                        <select name="perfil" onchange="loadImg(this.value)"> 
-                            <option value="#">Selicione</option>
+                        <select name="perfil" class="form-control" onchange="loadImg(this.value)" required> 
+                            <option value=""></option>
                             <option value="img/avatar1.png">Avatar 1</option>
                             <option value="img/avatar2.png">Avatar 2</option>
                             <option value="img/avatar3.png">Avatar 3</option>
                             <option value="img/avatar4.png">Avatar 4</option>
                             <!-- <option value="img/avatar1.png">Avatar 5</option>
-                            <option value="img/avatar1.png">Avatar 6</option>
-                            <option value="img/avatar1.png">Avatar 7</option> -->
-                        </select>
-                        <div class="form-group" id="ft_perfil"> </div>    
+                                <option value="img/avatar1.png">Avatar 6</option>
+                                <option value="img/avatar1.png">Avatar 7</option> -->
+                            </select>
+                        </div>
+                        
+                        <div class="form-group col-md-5 preview-perfil" id="ft_perfil"> 
+                            <p>preview</p>
+                        </div>    
                     </div>
-                </div>
-                
-                <br><br> <button type="submit" class="btn btn-primary">ATUALIZAR</button> 
-                <button class="btn btn-primary">ESQUECI MINHA SENHA</button>
+                    <br><br><br>
+                    
+                    <h4>ENDEREÇO RESIDENCIAL</h4>
+                    <br><br>
+                    
+                    <div class="form-row">
+                        <div class="form-group col-md-5">
+                            <label for="cep">CEP</label>
+                            <input type="text" class="form-control" id="cep" placeholder="00000-000" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group col-md-10">
+                            <label for="logradouro">Logradouro</label>
+                            <input type="text" class="form-control" id="logradouro" disabled >   
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group col-md-5">
+                            <label for="numero">Numero</label>
+                            <input type="text" class="form-control" id="numero" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
+                        </div>
+                        <div class="form-group col-md-5">
+                            <label for="numero">Complemento</label>
+                            <input type="text" class="form-control" id="numero" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group col-md-5">
+                            <label for="bairro">Bairro</label>
+                            <input type="text" class="form-control" id="bairro" disabled >
+                        </div>
+                        <div class="form-group col-md-5">
+                            <label for="estado">Estado</label>
+                            <select id="uf" class="form-control" required>
+                                <option ></option>
+                                <option value="Acre">Acre</option>
+                                <option value="Alagoas">Alagoas</option>
+                                <option value="Amapá">Amapá</option>
+                                <option value="Amazonas">Amazonas</option>
+                                <option value="Bahia">Bahia</option>
+                                <option value="Ceará">Ceará</option>
+                                <option value="Distrito Federal">Distrito Federal</option>
+                                <option value="Espírito Santo">Espírito Santo</option>
+                                <option value="Goiás">Goiás</option>
+                                <option value="Maranhão">Maranhão</option>
+                                <option value="Mato Grosso">Mato Grosso</option>
+                                <option value="Mato Grosso do Sul">Mato Grosso do Sul</option>
+                                <option value="Minas Gerais">Minas Gerais</option>
+                                <option value="Pará">Pará</option>
+                                <option value="Paraíba">Paraíba</option>
+                                <option value="Paraná">Paraná</option>
+                                <option value="Pernambuco">Pernambuco</option>
+                                <option value="Piauí">Piauí</option>
+                                <option value="Rio de Janeiro">Rio de Janeiro</option>
+                                <option value="Rio Grande do Norte">Rio Grande do Norte</option>
+                                <option value="Rio Grande do Sul">Rio Grande do Sul</option>
+                                <option value="Rondônia">Rondônia</option>
+                                <option value="Roraima">Roraima</option>
+                                <option value="Santa Catarina">Santa Catarina</option>
+                                <option value="São Paulo">São Paulo</option>
+                                <option value="Sergipe">Sergipe</option>
+                                <option value="Tocantins">Tocantins</option>
+                                
+                            </select>
+                        </div>            
+                    </div>    
+                    <br><br><br>                                    
+                    <div class="form-row">
+                        <div class="form-group col-md-5">
+                            <button type="submit" class="btn btn-primary form-control" style="background-color: #8B0000; height: 50px">ATUALIZAR</button> 
+                        </div>
+                        <div class="form-group col-md-5">
+                            <button class="btn btn-primary form-control" style="background-color: #8B0000; height: 50px">ALTERAR SENHA</button>
+                        </div>
+                    </div>
+                </form>
             </div>
-        </form>
     </section>
     
     
@@ -274,7 +280,7 @@
     <section class="resume-section" id="trofeu">
         <h2>Troféus</h2>
         <p>Passe o mouse por cima do troféu para saber como adquiri-lo</p>
-
+        
         <div class="trofeus">
             <div class="figura">
                 <img id="C0" src="img/C0.png"> </span>
@@ -285,7 +291,7 @@
                 <figcaption class="figure-caption">Troféu concedido após o primeiro registro de doação.</figcaption> 
             </div>
         </div>
-
+        
         <div class="trofeus">
             <div class="figura">
                 <img id="T4" src="img/T4.png"> </span>
@@ -304,7 +310,7 @@
                 <figcaption class="figure-caption">Troféu SAPPHIRE <br> Concedido após o 15° registro de doação</figcaption> 
             </div>
         </div>
-
+        
         <div class="trofeus">
             <div class="figura">
                 <img id="SF1" src="img/SF4.png"> </span>
@@ -323,7 +329,7 @@
                 <figcaption class="figure-caption">Troféu SAPPHIRE DONATION <br> Concedido após o registro de doações em sequencia durante 4 anos</figcaption> 
             </div>
         </div>
-            
+        
     </section>
     
     
