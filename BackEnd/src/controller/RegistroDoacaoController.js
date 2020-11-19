@@ -30,7 +30,7 @@ module.exports = {
             },
           });
           if (lastRegister.length == 0) {
-            if (dataDoacao < user.dateRegister) {
+            if (dataDoacao > user.dateRegister) {
               await registerGenero(dataDoacao, localDoacao, user, false);
               tropy.store(user);
             } else {

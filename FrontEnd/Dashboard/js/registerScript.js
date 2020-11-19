@@ -9,20 +9,21 @@ function fillTable() {
       let html = '';
       for (i = 0; i < data.length; i++) {
         html +=
-          '<tr class="active">' +
+        '<div class="container">' +
+        '<table id="table_posicao"">' +
+          '<tr>' +
           '<td>' +
-          data[i].dataDoacao +
+          data[i].dataDoacao.substr(0, 10) +
           '</td>' +
-          '<br/><br/>' +
-          '<td class="">' +
+          '<td>' +
           data[i].localDoacao +
           '</td>' +
-          '<br/><br/>' +
-          '<td class="pv3 w-30 pr3 bb b--black-20">' +
+          '<td>' +
           '<div class="btn-group" role="group" aria-label="Basic example">' +
           '</div>' +
           '</td>' +
-          '</tr>';
+          '</tr>' + '</table>' +
+          '</div>';
       }
       $('#tblBody').html(html);
     })
@@ -37,6 +38,7 @@ function registrarDoacao(event) {
   var user_id = localStorage.getItem('User');
   var genero = document.getElementById('sexo').value;
   if (genero == '') {
+    alert('Por preencha seu sexo nos seus dados cadastrais');
   } else {
     var dataDoacao = document.getElementById('dataDoacao').value;
     var localDoacao = document.getElementById('localDoacao').value;
@@ -57,8 +59,8 @@ function registrarDoacao(event) {
       } else {
         alert('ERROOR');
       }
+      fillTable();
     });
-    fillTable();
   }
 }
 function showRegister(event) {}

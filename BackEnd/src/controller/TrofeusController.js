@@ -2,18 +2,21 @@ const Trophy = require('../models/Trophy');
 const RegistroDoacao = require('../models/RegistroDoacao');
 const moment = require('moment');
 var step = 0;
-
 module.exports = {
   async store(user) {
     var trofeus = await Trophy.find({ user: user._id });
     if (trofeus.length >= 1) {
-      atualizarTrophy();
+      atualizarTrophy(user);
     } else {
-      Trophy.create({
-        user: user._id,
-        trofeus: ['T0', 'T1'],
-      });
+      trofeus.trofeus =  ['T0', 'T1'];
+      trofeus.save();
     }
+  },
+  async planStore(user) {
+    Trophy.create({
+      user: user._id,
+      trofeus: [],
+    });
   },
   async show(req, res) {
     const { user_id } = req.params;
@@ -30,26 +33,26 @@ async function atualizarTrophy(user) {
   var register = await RegistroDoacao.find({ user: user._id }).sort({
     dataDoacao: -1,
   });
-  for (let index = 0; index < register.length; index++) {
-    if (register.noTropy == true) {
-    } else {
-      Trophy.findOne({ user: user._id }, function (err, trof) {
-        if (err) {
-          console.log(err);
-        } else {
-          sequenciaDoacao(trof, register, user);
-          feitasDoacao(trof, register, user);
-          userDoacao(trof, register, user);
-        }
-      });
-    }
-  }
+          Trophy.findOne({ user: user._id }, async function(err,trof) {
+            if (err) {
+                console.log(err);
+            }else
+            await sequenciaDoacao(trof, register, user);
+            await feitasDoacao(trof, register, user);
+            await userDoacao(trof, user);
+            console.log(trof);
+            trof.save();
+          });
+          step = 0;
 }
 
 async function sequenciaDoacao(trof, register, user) {
-  if (user.genero == 'Masculino') {
+  for (let i = 0; i < register.length; i++) {
+    if (register[i].noTropy == true) {
+    } else {
+        if (user.genero == 'Masculino') {
     var comecoAno = moment().format('YYYY');
-    if (moment(register.dataDoacao).format('YYYY') == comecoAno) {
+    if (moment(register[i].dataDoacao).format('YYYY') == comecoAno) {
       step++;
       if (step == 4) {
         var tt = trof.trofeus.find((element) => element == 'SF1');
@@ -100,30 +103,32 @@ async function sequenciaDoacao(trof, register, user) {
       }
     }
   }
-  trof.save();
+    }
+  }
 }
 async function feitasDoacao(trof, register) {
   var tt;
-  if (register.length == 5) {
+  if (register.length >= 5 || register.length <= 9) {
     tt = trof.trofeus.find((element) => element == 'T2');
     if (tt != undefined) {
     } else {
       trof.trofeus.push('T2');
     }
-  } else if (register.length == 10) {
+  } 
+  if (register.length >= 10 || register.length <= 14) {
     tt = trof.trofeus.find((element) => element == 'T3');
     if (tt != undefined) {
     } else {
       trof.trofeus.push('T3');
     }
-  } else if (register.length == 15) {
+  } 
+   if (register.length >= 15 || register.length <= 19) {
     tt = trof.trofeus.find((element) => element == 'T4');
     if (tt != undefined) {
     } else {
       trof.trofeus.push('T4');
     }
   }
-  trof.save();
 }
 async function userDoacao(trof, user) {
   var inicioUserY = moment(user.dateRegister).format('YYYY');
@@ -132,25 +137,28 @@ async function userDoacao(trof, user) {
   var atualM = moment().format('MM');
   var qtempoY = atualY - inicioUserY;
   var qtempoM = atualM - inicioUserM;
-  if (qtempoM >= 1 && qtempoM < 6) {
+  if (qtempoM >= 1 || qtempoM < 6) {
     tt = trof.trofeus.find((element) => element == 'U1');
     if (tt != undefined) {
     } else {
       trof.trofeus.push('U1');
     }
-  } else if (qtempoM >= 6 && qtempoM < 12) {
+  }
+   if (qtempoM >= 6 || qtempoM < 12) {
     tt = trof.trofeus.find((element) => element == 'U2');
     if (tt != undefined) {
     } else {
       trof.trofeus.push('U2');
     }
-  } else if (qtempoY >= 1 && qtempoM < 3) {
+  } 
+   if (qtempoY >= 1 || qtempoM < 3) {
     tt = trof.trofeus.find((element) => element == 'U3');
     if (tt != undefined) {
     } else {
       trof.trofeus.push('U3');
     }
-  } else if (qtempoY >= 3) {
+  } 
+    if (qtempoY >= 3) {
     tt = trof.trofeus.find((element) => element == 'U4');
     if (tt != undefined) {
     } else {
@@ -158,6 +166,5 @@ async function userDoacao(trof, user) {
     }
     //NOVOS TROFEUS FUTUROS
   }
-  trof.save();
 }
 async function campanhaDoacao(trof, register) {}

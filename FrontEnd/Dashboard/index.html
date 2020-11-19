@@ -54,14 +54,17 @@
             <div class="card">
                 <div class="line1">
                     <!-- ----------------------->
-                    
-                    
-                    <!-- Informações Doador -->
-                    <div class="container informacoes">
-                        
-                        <div class="row justify-content-around">
-                            <div class="col-sm-6" id="informa">Nome:
-                                <p id="nomePrinci"></p>
+                      <div class="container">
+                          <div class="img-circle" id="ft_avatar"> </div>
+                      </div>  
+                      
+                        <!-- Informações Doador -->
+                        <div class="container informacoes">
+                            
+                            <div class="row justify-content-around">
+                                <div class="col-sm-6" id="informa">Nome:
+                                    <p id="nomePrinci"></p>
+                                </div>
                             </div>
                         </div>
                         <div class="row justify-content-around">
@@ -175,8 +178,8 @@
                 <div class="form-row">
                     <div class="form-group col-md-5">
                         <label for="">Avatar</label>
-                        <select name="perfil" class="form-control" onchange="loadImg(this.value)" required> 
-                            <option value=""></option>
+                        <select id="fotoPefil" name="perfil" onchange="loadImg(this.value)"> 
+                            <option value="#">Selicione</option>
                             <option value="img/avatar1.png">Avatar 1</option>
                             <option value="img/avatar2.png">Avatar 2</option>
                             <option value="img/avatar3.png">Avatar 3</option>
@@ -339,14 +342,14 @@
         
         <form onsubmit="">
             <h2>Registre sua doação</h2>
-            <div class="form-group col-md-3">
+            <div class="form-group col-sm-3">
                 <br><br>
                 <p>Data de sua ultima doação</p> 
                 <input type="text" id="dataDoacao" placeholder="00/00/0000" maxlength="10" required />
                 <br><br><br>
             </div>
             
-            <div class="form-group col-md-3">
+            <div class="form-group col-sm-3">
                 <label >Local de Doação</label>
                 <select id="localDoacao" class="form-control" required>
                     <option ></option>

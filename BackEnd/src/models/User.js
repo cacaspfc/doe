@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const moment = require('moment');
 
 const UserSchema = new mongoose.Schema({
+  fotoPerfil: String,
   email: String,
   password: String,
   username: String,
@@ -18,7 +19,6 @@ const UserSchema = new mongoose.Schema({
     type: Date,
     default: new Date(moment().subtract(3, 'hour')),
   },
-  fotoPerfil: String,
 });
 
 module.exports = mongoose.model('User', UserSchema);
