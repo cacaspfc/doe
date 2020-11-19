@@ -160,15 +160,20 @@ botaoRegistro.addEventListener(
     var data = document.getElementById('dataDoacao').value;
     var parteData = data.split('/');
     var dataAno = new Date(parteData[2], parteData[1] - 1, parteData[0]);
-    if (dataAno > new Date()) {
-      alert('Data incorreta');
-      preventDefault(new Event('event'));
-    } else if ((sexo = '')) {
-      alert('Preencha seus dados cadastrais primeiro');
-    } else {
+    if (document.getElementById('nome').value == 'admin') {
       registrarDoacao(event);
       fillTable();
+    } else {
+      if (dataAno > new Date()) {
+        alert('Data incorreta');
+      } else if ((sexo = '')) {
+        alert('Preencha seus dados cadastrais primeiro');
+      } else {
+        registrarDoacao(event);
+        fillTable();
+      }
     }
+    preventDefault(new Event('event'));
   },
   false
 );

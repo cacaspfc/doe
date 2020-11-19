@@ -11,7 +11,7 @@ module.exports = {
     let user = await User.findOne({ email });
     if (user == null) {
       user = await User.create({ email, password, username });
-      Trophy.planStore();
+      Trophy.planStore(user);
       res.json(user);
     } else if (user) {
       res.status(409).json(null);
