@@ -108,21 +108,21 @@ async function sequenciaDoacao(trof, register, user) {
 }
 async function feitasDoacao(trof, register) {
   var tt;
-  if (register.length >= 5 || register.length <= 9) {
+  if (register.length >= 5 && register.length <= 9) {
     tt = trof.trofeus.find((element) => element == 'T2');
     if (tt != undefined) {
     } else {
       trof.trofeus.push('T2');
     }
   }
-  if (register.length >= 10 || register.length <= 14) {
+  if (register.length >= 10 && register.length <= 14) {
     tt = trof.trofeus.find((element) => element == 'T3');
     if (tt != undefined) {
     } else {
       trof.trofeus.push('T3');
     }
   }
-  if (register.length >= 15 || register.length <= 19) {
+  if (register.length >= 15 && register.length <= 19) {
     tt = trof.trofeus.find((element) => element == 'T4');
     if (tt != undefined) {
     } else {
@@ -137,21 +137,21 @@ async function userDoacao(trof, user) {
   var atualM = moment().format('MM');
   var qtempoY = atualY - inicioUserY;
   var qtempoM = atualM - inicioUserM;
-  if (qtempoM >= 1 || qtempoM < 6) {
+  if (qtempoM >= 1 && qtempoM < 6) {
     tt = trof.trofeus.find((element) => element == 'U1');
     if (tt != undefined) {
     } else {
       trof.trofeus.push('U1');
     }
   }
-  if (qtempoM >= 6 || qtempoM < 12) {
+  if (qtempoM >= 6 && qtempoM < 12) {
     tt = trof.trofeus.find((element) => element == 'U2');
     if (tt != undefined) {
     } else {
       trof.trofeus.push('U2');
     }
   }
-  if (qtempoY >= 1 || qtempoM < 3) {
+  if (qtempoY >= 1 && qtempoM < 3) {
     tt = trof.trofeus.find((element) => element == 'U3');
     if (tt != undefined) {
     } else {
