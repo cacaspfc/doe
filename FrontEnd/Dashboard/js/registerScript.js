@@ -37,6 +37,7 @@ function registrarDoacao(event) {
   var user_id = localStorage.getItem('User');
   var genero = document.getElementById('sexo').value;
   if (genero == '') {
+    alert('Por preencha seu sexo nos seus dados cadastrais');
   } else {
     var dataDoacao = document.getElementById('dataDoacao').value;
     var localDoacao = document.getElementById('localDoacao').value;

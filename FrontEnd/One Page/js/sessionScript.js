@@ -147,7 +147,7 @@ function DadosUser(event) {
         document.getElementById('sexo').value = data.genero;
         document.getElementById('tiposanguineo').value = tipoSangue;
 
-        if (data.fotoPerfil !== undefined) {
+        if (data.fotoPerfil !== undefined && data.fotoPerfil !== '#') {
           document.getElementById('ft_avatar').innerHTML =
             "<img src='" + data.fotoPerfil + "'>";
 
