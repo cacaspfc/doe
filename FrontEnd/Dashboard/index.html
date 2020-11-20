@@ -59,7 +59,7 @@
                     </div>  
                     
                     <!-- Informações Doador -->
-                    <dgiv class="container informacoes">
+                    <div class="container informacoes">
                         
                         <div class="row justify-content-around">
                             <div class="col-sm-6" id="informa">Nome:
@@ -180,7 +180,7 @@
             <div class="form-row">
                 <div class="form-group col-md-5">
                     <label for="">Avatar</label>
-                    <select id="fotoPefil" name="perfil" onchange="loadImg(this.value)"> 
+                    <select id="fotoPefil" name="perfil" class="form-control" onchange="loadImg(this.value)"> 
                         <option value="#">Selicione</option>
                         <option value="img/avatar1.png">Avatar 1</option>
                         <option value="img/avatar2.png">Avatar 2</option>
@@ -223,7 +223,7 @@
                     </div>
                     <div class="form-group col-md-5">
                         <label for="numero">Complemento</label>
-                        <input type="text" class="form-control" id="complemento" required>
+                        <input type="text" class="form-control" id="complemento">
                     </div>
                 </div>
                 
@@ -283,59 +283,77 @@
     
     <!-- TROFEU-->
     <section class="resume-section" id="trofeu">
-        <h2>Troféus</h2>
-        <p>Passe o mouse por cima do troféu para saber como adquiri-lo</p>
+        <h2>MEDALHAS</h2>
         
-        <div class="trofeus">
-            <div class="figura">
+        <div class="trofeus-row-1">
+            <div class="figura-row-1">
                 <img id="C0" src="img/C0.png"> </span>
-                <figcaption class="figure-caption">Troféu concedido pela criação da conta.</figcaption> 
+                <figcaption class="figure-caption">WELCOME <br> Medalha concedido pela criação da conta.</figcaption> 
             </div>
-            <div class="figura">
+            <div class="figura-row-1">
                 <img id="T0" src="img/T0.png"> </span>
-                <figcaption class="figure-caption">Troféu concedido após o primeiro registro de doação.</figcaption> 
+                <figcaption class="figure-caption">FIRST DONATION <br> Medalha concedido após o primeiro registro de doação.</figcaption> 
             </div>
-            <div class="figura">
-                <img id="T0" src="img/ULT.png"> </span>
-                <figcaption class="figure-caption">Troféu concedido após o primeiro registro de doação.</figcaption> 
+            <div class="figura-row-1">
+                <img id="ULT" src="img/ULT.png"> </span>
+                <figcaption class="figure-caption">SUPERMAN <br> Medalha concedido após ganhar todas as medalhas </figcaption> 
             </div>
         </div>
         
-        <div class="trofeus">
+        <div class="trofeus-row-1">
             <div class="figura">
                 <img id="T4" src="img/T4.png"> </span>
-                <figcaption class="figure-caption">Troféu GOLD <br> Concedido após o 2° registro de doação</figcaption> 
+                <figcaption class="figure-caption">GOLD <br> Concedido após o 2° registro de doação</figcaption> 
             </div>
             <div class="figura">
                 <img id="T3" src="img/T3.png"> </span>
-                <figcaption class="figure-caption">Troféu EMERALD <br>  Concedido após o 5° registro de doação</figcaption> 
+                <figcaption class="figure-caption">EMERALD <br>  Concedido após o 5° registro de doação</figcaption> 
             </div>
             <div class="figura">
                 <img id="T2" src="img/T2.png"> </span>
-                <figcaption class="figure-caption">Troféu RUBY <br>Concedido após o 10° registro de doação</figcaption> 
+                <figcaption class="figure-caption">RUBY <br>Concedido após o 10° registro de doação</figcaption> 
             </div>
             <div class="figura">
                 <img id="T1" src="img/T1.png"> </span>
-                <figcaption class="figure-caption">Troféu SAPPHIRE <br> Concedido após o 15° registro de doação</figcaption> 
+                <figcaption class="figure-caption">SAPPHIRE <br> Concedido após o 15° registro de doação</figcaption> 
             </div>
         </div>
         
-        <div class="trofeus">
+        <div class="trofeus-row-1">
             <div class="figura">
                 <img id="SF1" src="img/SF4.png"> </span>
-                <figcaption class="figure-caption">Troféu GOLD DONATION <br> Concedido após o registro de doações em sequencia durante 1 ano </figcaption> 
+                <figcaption class="figure-caption">GOLD DONATION <br> Concedido após o registro de doações em sequencia durante 1 ano </figcaption> 
             </div>
             <div class="figura">
                 <img id="SF2" src="img/SF3.png"> </span>
-                <figcaption class="figure-caption">Troféu EMERALD DONATION <br> Concedido após o registro de doações em sequencia durante 2 anos </figcaption> 
+                <figcaption class="figure-caption">EMERALD DONATION <br> Concedido após o registro de doações em sequencia durante 2 anos </figcaption> 
             </div>
             <div class="figura">
                 <img id="SF3" src="img/SF2.png"> </span>
-                <figcaption class="figure-caption">Troféu RUBY DONATION <br> Concedido após o registro de doações em sequencia durante 3 anos </figcaption> 
+                <figcaption class="figure-caption">RUBY DONATION <br> Concedido após o registro de doações em sequencia durante 3 anos </figcaption> 
             </div>
             <div class="figura">
                 <img id="SF4" src="img/SF1.png"> </span>
-                <figcaption class="figure-caption">Troféu SAPPHIRE DONATION <br> Concedido após o registro de doações em sequencia durante 4 anos</figcaption> 
+                <figcaption class="figure-caption">SAPPHIRE DONATION <br> Concedido após o registro de doações em sequencia durante 4 anos</figcaption> 
+            </div>
+        </div>
+
+        <div class="trofeus-row-1">
+            <div class="figura">
+                <img id="U4" src="img/T4 - Copia.png"> </span>
+                <figcaption class="figure-caption">GOLD USER <br> Concedido após o usuário completar 1 mes de cadastro </figcaption> 
+            </div>
+            <div class="figura">
+                <img id="U3" src="img/T3 - Copia.png"> </span>
+                <figcaption class="figure-caption">EMERALD USER <br> Concedido após o usuário completar 6 meses de cadastro </figcaption> 
+            </div>
+            <div class="figura">
+                <img id="U2" src="img/T2 - Copia.png"> </span>
+                <figcaption class="figure-caption">RUBY USER <br> Concedido após o usuário completar 1 ano de cadastro </figcaption> 
+            </div>
+            <div class="figura">
+                <img id="U1" src="img/T1 - Copia.png"> </span>
+                <figcaption class="figure-caption">SAPPHIRE USER <br> Concedido após o usuário completar 3 anos de cadastro</figcaption> 
             </div>
         </div>
         

@@ -104,11 +104,11 @@ icone avatar */
   flex-direction: column;
   padding-left: 150px;
 }
-.preview-perfil{
+/* .preview-perfil{
   height: 200px;
   background-color: gray;
   text-align: center;
-}
+} */
 
 
 
@@ -135,33 +135,64 @@ icone avatar */
   width: 100%;
   flex-wrap: wrap;
 }
-.figura{
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  width: 12.5rem;
-  height: 27vh;
-  align-items: center;
-}
-.figura > img{
-  width: 175px;
-}
 
-.figure-caption{
-  display: none;
-}
-
-.figura:hover figcaption{
-  display: block;
-  position: relative;
-  bottom: 35px;
-  color: black;
-}
 
 
 #mapa {
   height:80vh;
   width:73vw;
+}
+
+/* ---------------------------------- */
+
+/* TROFEUS> */
+
+.trofeus-row-1{
+  display: flex;
+  width: 100%;
+  height: 50vh;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  
+}
+
+
+
+.figura-row-1{
+  background-color: #F5D9D9;
+  text-align: center;
+  width: 20rem;
+  height: 40vh;
+}
+
+.figura-row-1 > img{
+  width: 200px;
+}
+
+/* efeito hover figcaption */
+
+/* .figure-row-1 > caption{
+  display: none;
+}
+
+.figura-row-1:hover figcaption{
+  display: block;
+  position: relative;
+  bottom: 20px;
+  color: black;
+} */
+
+.figura{
+  background-color: #F5D9D9;
+  text-align: center;
+  width: 15rem;
+  flex-wrap: wrap;
+}
+
+.figura > img{
+  width: 175px;
 }
 
 
