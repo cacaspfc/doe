@@ -63,12 +63,15 @@ icone avatar */
   width: 180px;
   padding: 10px;
 }
-
+/* ========================================== */
+/* Avatar de Perfil */
+#ft_avatar {
+  padding: 30px 8px 30px 5px;
+}
 /* ========================================== */
  .informacoes{
  position: relative;
- top: -210px; 
- 
+ top: -260px; 
 }
 #informa{
   font-family:'Century Gothic';
@@ -77,16 +80,8 @@ icone avatar */
   display: flex;
 }
 /* ========================================== */
-/* .cirle{
-  background-color: white;
-} */
-
-
-/* ----------------------------------------- */
 /* DIV CADASTRO */
 
-
-  
 #cadastro{
   background-color: #F5D9D9;
 }
@@ -109,9 +104,6 @@ icone avatar */
   background-color: gray;
   text-align: center;
 }
-
-
-
 /* ---------------------------------------- */
 .line2{
   padding-top: 10px;
