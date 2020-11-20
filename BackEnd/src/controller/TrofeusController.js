@@ -4,13 +4,18 @@ const moment = require('moment');
 var step = 0;
 module.exports = {
   async store(user) {
-    var trofeus = await Trophy.find({ user: user._id });
-    if (trofeus.length >= 1) {
-      atualizarTrophy(user);
-    } else {
-      trofeus.trofeus = ['T0', 'T1'];
-      trofeus.save();
-    }
+    await Trophy.findOne({ user: user._id }, async function (err, trofeus) {
+      if (err) {
+      } else {
+        if (trofeus.trofeus.length > 1) {
+          console.log(trofeus.trofeus.length);
+          atualizarTrophy(user);
+        } else {
+          trofeus.trofeus = ['T0', 'T1'];
+          trofeus.save();
+        }
+      }
+    });
   },
   async planStore(user) {
     Trophy.create({
@@ -137,21 +142,21 @@ async function userDoacao(trof, user) {
   var atualM = moment().format('MM');
   var qtempoY = atualY - inicioUserY;
   var qtempoM = atualM - inicioUserM;
-  if (qtempoM >= 1 && qtempoM < 6) {
+  if (qtempoM >= 1) {
     tt = trof.trofeus.find((element) => element == 'U1');
     if (tt != undefined) {
     } else {
       trof.trofeus.push('U1');
     }
   }
-  if (qtempoM >= 6 && qtempoM < 12) {
+  if (qtempoM >= 6) {
     tt = trof.trofeus.find((element) => element == 'U2');
     if (tt != undefined) {
     } else {
       trof.trofeus.push('U2');
     }
   }
-  if (qtempoY >= 1 && qtempoM < 3) {
+  if (qtempoY >= 1) {
     tt = trof.trofeus.find((element) => element == 'U3');
     if (tt != undefined) {
     } else {
