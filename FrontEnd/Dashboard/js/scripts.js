@@ -173,7 +173,6 @@ botaoRegistro.addEventListener(
         fillTable();
       }
     }
-    preventDefault(new Event('event'));
   },
   false
 );
