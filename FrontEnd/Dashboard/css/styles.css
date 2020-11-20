@@ -68,10 +68,14 @@ icone avatar */
 #ft_avatar {
   padding: 30px 8px 30px 5px;
 }
+.box {
+  width: 70px; 
+  height: 70px;
+  padding-left: 5px;
+}
 /* ========================================== */
  .informacoes{
  position: relative;
- top: -260px; 
 }
 #informa{
   font-family:'Century Gothic';
