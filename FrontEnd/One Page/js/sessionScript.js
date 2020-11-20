@@ -56,10 +56,21 @@ function atualizarDados(event) {
   var cep = document.getElementById('cep').value;
   var logradouro = document.getElementById('logradouro').value;
   var numero = document.getElementById('numero').value;
+  var complemento = document.getElementById('complemento').value;
   var bairro = document.getElementById('bairro').value;
   var estado = document.getElementById('uf').value;
   var endereco =
-    logradouro + ',' + numero + ',' + bairro + ',' + cep + ',' + estado;
+    logradouro +
+    ',' +
+    numero +
+    ',' +
+    complemento +
+    ',' +
+    bairro +
+    ',' +
+    cep +
+    ',' +
+    estado;
   var telefone = document
     .getElementById('phone')
     .value.replace('(', '')
@@ -118,10 +129,11 @@ function DadosUser(event) {
         var enderecoP = [];
         if (endereco != undefined) {
           var enderecoP = endereco.split(',');
-          document.getElementById('cep').value = enderecoP[3];
+          document.getElementById('cep').value = enderecoP[4];
           document.getElementById('logradouro').value = enderecoP[0];
           document.getElementById('numero').value = enderecoP[1];
-          document.getElementById('bairro').value = enderecoP[2];
+          document.getElementById('complemento').value = enderecoP[2];
+          document.getElementById('bairro').value = enderecoP[3];
           document.getElementById('uf').value = estado;
         }
         if (dataNascimento != undefined) {

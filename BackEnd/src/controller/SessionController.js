@@ -54,7 +54,6 @@ module.exports = {
       user.fotoPerfil = perfilFoto;
       user.save();
       res.status(200).send(user);
-      console.log('usuario atualizou os dados' + user);
     });
     // return  res.redirect("/");
   },
